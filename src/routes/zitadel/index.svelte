@@ -19,4 +19,4 @@
   <meta name="Description" content="Caos Identy and Access Management Solution" />
 </svelte:head>
 
-<Docs {sections} project="sapper" dir="zitadel"/>
+<Docs {sections} project="site" dir="zitadel"/>

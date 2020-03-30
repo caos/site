@@ -33,7 +33,7 @@
     <span class="learn-more">learn more</span>
   </a>
 
-  <a href="migrating" slot="two">
+  <a href="orbos" slot="two">
     <img src="icons/orbos-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
     <h2>Orbos</h2>
     <p>This is our Meta Cluster Manager. Explore our docs</p>

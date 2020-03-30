@@ -1,6 +1,6 @@
 {
-	"name": "citadeldoc",
-	"description": "citadeldoc",
+	"name": "site",
+	"description": "site",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "sapper dev",
