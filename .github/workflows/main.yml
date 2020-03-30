@@ -1,6 +1,9 @@
 name: Build and Deploy
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
@@ -17,8 +20,7 @@ jobs:
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
-      env:
+      with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: __sapper__/export
