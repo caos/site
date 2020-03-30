@@ -58,9 +58,5 @@
       style="margin: 0 0 1em 0; min-width: 0; min-height: 0">
       # some command. dont yet know what might be there.. huhu
     </pre>
-
-    <!-- <p class="cta">
-      <a rel="prefetch" href="docs">Learn Sapper</a>
-    </p> -->
   </div>
 </Blurb>

@@ -39,7 +39,7 @@ Description
 </div>
 ```
 
-> See the section on [preloading](docs#Preloading) for more info about `preload` and `this.fetch`
+> See the section on [preloading](zitadel#Preloading) for more info about `preload` and `this.fetch`
 
 ### File naming rules
 

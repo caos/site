@@ -7,7 +7,7 @@
   export let owner = "caos";
   export let project = "site";
   export let path = "/content";
-  export let dir = "docs";
+  export let dir = "zitadel";
   export let edit_title = "edit this section";
   export let sections;
   let active_section;
@@ -392,7 +392,7 @@
         <span class="offset-anchor" id={section.slug} />
 
         <!-- svelte-ignore a11y-missing-content -->
-        <a href="docs#{section.slug}" class="anchor" aria-hidden />
+        <a href="{dir}#{section.slug}" class="anchor" aria-hidden />
 
         {@html section.metadata.title}
         <small>
@@ -412,7 +412,7 @@
 <aside bind:this={aside} class="sidebar-container" class:open={show_contents}>
   <div class="sidebar" on:click={() => (show_contents = false)}>
     <!-- scroll container -->
-    <GuideContents {sections} {active_section} {show_contents} />
+    <GuideContents {dir} {sections} {active_section} {show_contents} />
   </div>
 
   <button on:click={() => (show_contents = !show_contents)}>

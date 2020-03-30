@@ -16,9 +16,9 @@ This section is a reference for the curious. We recommend you read this section 
 │ └ 
 ```
 
-You'll notice a few extra files and a `cypress` directory which relates to [testing](docs#Testing) — we don't need to worry about those right now.
+You'll notice a few extra files and a `cypress` directory which relates to [testing](zitadel#Testing) — we don't need to worry about those right now.
 
-> This is just a placeholder for later so we can write this nice attention hungry sections See [getting started](docs#Getting_started) for instructions
+> This is just a placeholder for later so we can write this nice attention hungry sections See [getting started](zitadel#Getting_started) for instructions
 
 ### Entities
 
