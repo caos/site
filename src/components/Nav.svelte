@@ -6,7 +6,7 @@
   export let segment;
   export let page;
   export let logo;
-  export let home = "Home";
+  export let title;
   export let home_title = "Homepage";
 
   const current = writable(null);
@@ -82,7 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: var(--nav-back);
     transform: none;
     transition: none;
     box-shadow: none;
@@ -121,16 +121,6 @@
     top: 0;
   }
 
-  /* ul.open {
-    padding: 0 0 1em 0;
-    background: white;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    border-radius: 0 0 var(--border-r) var(--border-r);
-    align-self: start;
-  } */
-
   ul.open :global(li) {
     display: block;
     text-align: right;
@@ -163,34 +153,24 @@
 
   .home {
     position: relative;
-    top: -0.1rem;
     width: 18rem;
-    height: 4.2rem;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     background: 0 50% no-repeat;
     background-size: auto 100%;
-    text-indent: -9999px;
-    /* z-index: 11; */
   }
 
   ul :global(li).active :global(a) {
     color: var(--prime);
   }
 
-  .modal-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
   a {
     color: inherit;
     border-bottom: none;
     transition: none;
+    font-family: 'ailerons';
+    font-size: 24px;
+    white-space: nowrap;
   }
 
   ul :global(li):not(.active) :global(a):hover {
@@ -202,13 +182,6 @@
       padding: 0;
       background: none;
     }
-
-    /* ul.open {
-      padding: 0;
-      background: white;
-      border: none;
-      align-self: initial;
-    } */
 
     ul.open :global(li) {
       display: inline;
@@ -228,10 +201,6 @@
     ul :global(li) {
       display: inline !important;
     }
-
-    .hide-if-desktop {
-      display: none !important;
-    }
   }
 </style>
 
@@ -244,25 +213,13 @@
       href="."
       class="home"
       title={home_title}
-      style="background-image: url({logo})">
-      {home}
+      >
+      {title}
     </a>
-
-    {#if open}
-      <div
-        class="modal-background hide-if-desktop"
-        on:click={() => (open = false)} />
-    {/if}
 
     <ul
       class="primary"
-      class:open
-      on:touchstart|capture={intercept_touchstart}
-      on:mouseenter={() => (open = true)}
-      on:mouseleave={() => (open = false)}>
-      <li class="hide-if-desktop" class:active={!segment}>
-        <a rel="prefetch" href=".">{home}</a>
-      </li>
+      class:open>
       <slot />
     </ul>
   </nav>

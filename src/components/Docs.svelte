@@ -5,9 +5,9 @@
   import { getFragment } from "../utils/navigation";
 
   export let owner = "caos";
-  export let project = "citadel";
-  export let path = "/site/content";
-  export let dir = "docs";
+  export let project = "site";
+  export let path = "/content";
+  export let dir = "zitadel";
   export let edit_title = "edit this section";
   export let sections;
   let active_section;
@@ -71,13 +71,14 @@
 <style>
   aside {
     position: fixed;
-    background-color: white;
+    background-color: var(--side-nav-back);
     left: 0.8rem;
     bottom: 0.8rem;
     width: 2em;
     height: 2em;
+    border-radius: .5rem;
     overflow: hidden;
-    border: 1px solid #eee;
+    border: 1px solid #81868a;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s, height 0.2s;
   }
@@ -92,7 +93,7 @@
 
   aside.open {
     width: calc(100vw - 3rem);
-    height: calc(100vh - var(--nav-h));
+    height: calc(100vh - var(--nav-h) - 3rem);
   }
 
   aside.open::before {
@@ -102,12 +103,6 @@
     left: 0;
     width: calc(100% - 2rem);
     height: 2em;
-    /* background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.7) 50%,
-      rgba(255, 255, 255, 1) 100%
-    ); */
     pointer-events: none;
     z-index: 2;
   }
@@ -158,7 +153,7 @@
       box-shadow: none;
       border: none;
       overflow: hidden;
-      background-color: var(--second);
+      background-color: var(--side-nav-back);
       color: white;
     }
 
@@ -281,14 +276,15 @@
     border-radius: 0 0 0 0;
     border: none;
     font-size: inherit;
+        font-weight: 700;
   }
 
   .content :global(h4),
   .content :global(h4 > code) {
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2.4rem;
-    color: var(--second);
+    color: var(--text);
     margin: 6.4rem 0 1.6rem 0;
     padding-left: 0;
     background: transparent;
@@ -396,12 +392,12 @@
         <span class="offset-anchor" id={section.slug} />
 
         <!-- svelte-ignore a11y-missing-content -->
-        <a href="docs#{section.slug}" class="anchor" aria-hidden />
+        <a href="{dir}#{section.slug}" class="anchor" aria-hidden />
 
         {@html section.metadata.title}
         <small>
           <a
-            href="https://github.com/{owner}/citadel/edit/master{path}/{dir}/{section.file}"
+            href="https://github.com/{owner}/site/edit/master{path}/{dir}/{section.file}"
             title={edit_title}>
             <Icon name="edit" />
           </a>
@@ -416,7 +412,7 @@
 <aside bind:this={aside} class="sidebar-container" class:open={show_contents}>
   <div class="sidebar" on:click={() => (show_contents = false)}>
     <!-- scroll container -->
-    <GuideContents {sections} {active_section} {show_contents} />
+    <GuideContents {dir} {sections} {active_section} {show_contents} />
   </div>
 
   <button on:click={() => (show_contents = !show_contents)}>

@@ -23,7 +23,6 @@
 
 	.hero h3, .logotype {
 		position: relative;
-		left: 1.6rem;
 	}
 
 	.hero h3 {
@@ -31,12 +30,13 @@
 	}
 
 	.logotype {
-		height: 4rem;
+        font-size: 7rem;
+        text-transform: uppercase;
 	}
 
 	@media (min-width: 640px) {
 		.logotype {
-			height: 6rem;
+            height: 10rem;
 		}
 
 		.hero h3 {
@@ -48,16 +48,12 @@
 		.hero {
 			margin: 15rem auto;
 		}
-
-		.hero h3, .logotype {
-			left: 3rem;
-		}
 	}
 </style>
 
 <ParallaxLogo alt="{title} logo" src={outline}/>
 
 <section class="hero">
-	<img alt="{title} logotype" class="logotype" src={logotype}>
+	<h1 class="logotype">{title}</h1>
 	<h3>{tagline}</h3>
 </section>

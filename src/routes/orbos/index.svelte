@@ -1,6 +1,6 @@
 <script context="module">
   export async function preload() {
-    const sections = await this.fetch(`migrating.json`).then(r => r.json());
+    const sections = await this.fetch(`orbos.json`).then(r => r.json());
     return { sections };
   }
 </script>
@@ -19,4 +19,4 @@
   <meta name="Description" content="The best swissmade iam ever made" />
 </svelte:head>
 
-<Docs {sections} project="sapper" dir="migrating" />
+<Docs {sections} dir="orbos" />
