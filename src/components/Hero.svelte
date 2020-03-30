@@ -31,7 +31,7 @@
 	}
 
 	.logotype {
-		height: 4rem;
+        font-size: 4rem;
 	}
 
 	@media (min-width: 640px) {
@@ -58,6 +58,6 @@
 <ParallaxLogo alt="{title} logo" src={outline}/>
 
 <section class="hero">
-	<img alt="{title} logotype" class="logotype" src={logotype}>
+	<h1 class="logotype">{title}</h1>
 	<h3>{tagline}</h3>
 </section>

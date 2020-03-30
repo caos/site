@@ -31,14 +31,19 @@
 
 /*	theme vars */
 .theme-default {
-	--back: #ffffff;
-	--back-light: #f6fafd;
-	--back-api: #eff8ff;
+	--back: #212224;
+	--back-light: transparent;
+	--back-api: #2d2e30;
 	--prime: #f50057;
-	--second: #2d2e30;
-	--flash: #2d2e30;
-	--heading: var(--second);
-	--text: #444;
+    --second: #2d2e30;
+    --flash: #2d2e30;
+
+    --primary-card: #2d2e30;
+    --secondary-card: #2d2e30;
+    --third-card: #2d2e30;
+
+	--heading: #e8eaed;
+	--text: #eff8ff;
 	--sidebar-text: rgba(255, 255, 255, .75);
 	--border-w: .3rem; /* border-width  */
 	--border-r: .4rem; /* border-radius */
@@ -58,7 +63,7 @@
 }
 
 body {
-	--font: 'Overpass', sans-serif;
+	--font: 'Rubik', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 }
 
@@ -70,6 +75,14 @@ body {
 	font-weight: 300;
 	src: local('Overpass Light '), local('Overpass-Light'),
 		url('/fonts/overpass/overpass-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Rubik Regular'), local('Rubik-Regular'),
+		url('/fonts/rubik/rubik-Regular.woff2') format('woff2');
 }
 
 /* overpass-600normal - latin */

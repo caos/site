@@ -18,7 +18,16 @@
 		padding: 1em;
 		display: flex;
 		flex-direction: column;
-		border-bottom: none;
+        border-bottom: none;
+        border-radius: 8px;
+        border: 1px solid #81868a;
+    }
+    
+    .box :global(img) {
+        display: block;
+        margin: auto;
+        height: 100px;
+        margin-bottom: 1rem;
 	}
 
 	.box :global(a) {
@@ -74,7 +83,7 @@
 		text-align: right;
 		background-color: var(--prime);
 		padding: 0.5em 1.8em 0.5em 1em;
-		border-radius: var(--border-r);
+		border-radius: 16px;
 		color: white;
 		position: relative;
 	}
@@ -134,16 +143,12 @@
 
 <Section>
 	<div class="blurb">
-		<div class="box" style="background: var(--prime); grid-area: one;">
+		<div class="box" style="background: var(--primary-card); grid-area: one;">
 			<slot name="one"></slot>
 		</div>
 
-		<div class="box" style="background: var(--flash); grid-area: two;">
+		<div class="box" style="background: var(--secondary-card); grid-area: two;">
 			<slot name="two"></slot>
-		</div>
-
-		<div class="box" style="background: var(--second); grid-area: three;">
-			<slot name="three"></slot>
 		</div>
 
 		<div class="what" style="grid-area: what;">
