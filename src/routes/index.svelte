@@ -15,13 +15,13 @@
 
 <svelte:head>
   <title>
-    Citadel • Docs
+    Caos • Documentation
   </title>
 </svelte:head>
 
 <img class="caos-back" src="icons/caos-logo-outline-1px-pictureonly.svg" alt="caos logo">
 
-<Hero tagline="We give you the tools" title="Caos Docs"></Hero>
+<Hero tagline="We give you the tools" title="Caos Documentation"></Hero>
 
 <Blurb>
   <a href="docs" slot="one">
@@ -36,7 +36,7 @@
   <a href="migrating" slot="two">
     <img src="icons/orbos-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
     <h2>Orbos</h2>
-    <p>explore the guide</p>
+    <p>This is our Meta Cluster Manager. Explore our docs</p>
 
     <span class="learn-more">learn more</span>
   </a>

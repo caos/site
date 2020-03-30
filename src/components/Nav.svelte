@@ -6,6 +6,7 @@
   export let segment;
   export let page;
   export let logo;
+  export let title;
   export let home = "Home";
   export let home_title = "Homepage";
 
@@ -82,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: var(--nav-back);
     transform: none;
     transition: none;
     box-shadow: none;
@@ -163,15 +164,11 @@
 
   .home {
     position: relative;
-    top: -0.1rem;
     width: 18rem;
-    height: 4.2rem;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     background: 0 50% no-repeat;
     background-size: auto 100%;
-    text-indent: -9999px;
-    /* z-index: 11; */
   }
 
   ul :global(li).active :global(a) {
@@ -191,6 +188,9 @@
     color: inherit;
     border-bottom: none;
     transition: none;
+    font-family: 'ailerons';
+    font-size: 24px;
+    white-space: nowrap;
   }
 
   ul :global(li):not(.active) :global(a):hover {
@@ -244,8 +244,8 @@
       href="."
       class="home"
       title={home_title}
-      style="background-image: url({logo})">
-      {home}
+      >
+      {title}
     </a>
 
     {#if open}

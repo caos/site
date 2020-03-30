@@ -31,9 +31,7 @@
 
 <Icons />
 
-<Nav {segment} {page} logo="caos.svg">
-  <NavItem segment="docs">Docs</NavItem>
-
+<Nav {segment} {page} logo="caos.svg" title="Caos Documentation">
   <NavItem external="https://caos.ch">Caos</NavItem>
 
   <NavItem external="https://github.com/sveltejs/sapper" title="GitHub Repo">

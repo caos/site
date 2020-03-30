@@ -158,7 +158,7 @@
       box-shadow: none;
       border: none;
       overflow: hidden;
-      background-color: var(--second);
+      background-color: var(--side-nav-back);
       color: white;
     }
 
@@ -281,14 +281,15 @@
     border-radius: 0 0 0 0;
     border: none;
     font-size: inherit;
+        font-weight: 700;
   }
 
   .content :global(h4),
   .content :global(h4 > code) {
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2.4rem;
-    color: var(--second);
+    color: var(--text);
     margin: 6.4rem 0 1.6rem 0;
     padding-left: 0;
     background: transparent;

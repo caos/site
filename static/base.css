@@ -34,16 +34,20 @@
 	--back: #212224;
 	--back-light: transparent;
 	--back-api: #2d2e30;
-	--prime: #f50057;
-    --second: #2d2e30;
-    --flash: #2d2e30;
+	--prime: #f81f6b;
+    --second: rgb(239,139,60);
+    --flash: #f54381;
+
+    --nav-back: #2d2e30;
+    --side-nav-back: #212224;
 
     --primary-card: #2d2e30;
     --secondary-card: #2d2e30;
     --third-card: #2d2e30;
 
 	--heading: #e8eaed;
-	--text: #eff8ff;
+    --text: #eff8ff;
+    --dark-text: #8a868a;
 	--sidebar-text: rgba(255, 255, 255, .75);
 	--border-w: .3rem; /* border-width  */
 	--border-r: .4rem; /* border-radius */
@@ -63,44 +67,32 @@
 }
 
 body {
-	--font: 'Rubik', sans-serif;
+	--font: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 }
 
 /*	fonts ---------------------------------- */
-/* overpass-300normal - latin */
-@font-face {
-	font-family: 'Overpass';
-	font-style: normal;
-	font-weight: 300;
-	src: local('Overpass Light '), local('Overpass-Light'),
-		url('/fonts/overpass/overpass-latin-300.woff2') format('woff2');
-}
 
 @font-face {
 	font-family: 'Rubik';
 	font-style: normal;
 	font-weight: 300;
 	src: local('Rubik Regular'), local('Rubik-Regular'),
-		url('/fonts/rubik/rubik-Regular.woff2') format('woff2');
+		url('/fonts/rubik/Rubik-Regular.ttf') format('ttf');
 }
 
-/* overpass-600normal - latin */
 @font-face {
-	font-family: 'Overpass';
+	font-family: 'Rubik';
 	font-style: normal;
 	font-weight: 600;
-	src: local('Overpass Bold '), local('Overpass-Bold'),
-		url('/fonts/overpass/overpass-latin-600.woff2') format('woff2');
+	src: local('Rubik Bold'), local('Rubik-Bold'),
+		url('/fonts/rubik/Rubik-Bold.ttf') format('ttf');
 }
 
-/* fira-mono-400normal - latin */
 @font-face {
-	font-family: 'Fira Mono';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Fira Mono Regular '), local('Fira Mono-Regular'),
-		url('/fonts/fira-mono/fira-mono-latin-400.woff2') format('woff2');
+	font-family: 'ailerons';
+	src: local('ailerons'), local('ailerons'),
+		url('/fonts/ailerons/ailerons.otf') format('opentype');
 }
 
 /*	base reset ----------------------------- */
@@ -221,7 +213,7 @@ code {
 	position: relative;
 	border-radius: .3em;
 	white-space: nowrap;
-	color: #444;
+	color: var(--text);
 	-webkit-font-smoothing: initial;
 }
 

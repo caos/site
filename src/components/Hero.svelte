@@ -23,7 +23,6 @@
 
 	.hero h3, .logotype {
 		position: relative;
-		left: 1.6rem;
 	}
 
 	.hero h3 {
@@ -31,12 +30,13 @@
 	}
 
 	.logotype {
-        font-size: 4rem;
+        font-size: 7rem;
+        text-transform: uppercase;
 	}
 
 	@media (min-width: 640px) {
 		.logotype {
-			height: 6rem;
+            height: 10rem;
 		}
 
 		.hero h3 {
@@ -47,10 +47,6 @@
 	@media (min-width: 800px) {
 		.hero {
 			margin: 15rem auto;
-		}
-
-		.hero h3, .logotype {
-			left: 3rem;
 		}
 	}
 </style>

@@ -20,7 +20,6 @@
 		flex-direction: column;
         border-bottom: none;
         border-radius: 8px;
-        border: 1px solid #81868a;
     }
     
     .box :global(img) {
@@ -33,15 +32,17 @@
 	.box :global(a) {
 		color: white;
 		padding: 0;
-		border: none;
+        border: none;
 	}
 
 	.box :global(h2) {
 		padding: 0;
 		margin: 0 0 0.5em 0;
 		font-size: var(--h2);
-		color: white;
-		text-align: left;
+		color: var(--text);
+        text-align: left;
+        font-family: 'ailerons';
+        text-align: center;
 	}
 
 	.blurb :global(p) {
