@@ -71,13 +71,14 @@
 <style>
   aside {
     position: fixed;
-    background-color: white;
+    background-color: var(--side-nav-back);
     left: 0.8rem;
     bottom: 0.8rem;
     width: 2em;
     height: 2em;
+    border-radius: .5rem;
     overflow: hidden;
-    border: 1px solid #eee;
+    border: 1px solid #81868a;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s, height 0.2s;
   }
@@ -92,7 +93,7 @@
 
   aside.open {
     width: calc(100vw - 3rem);
-    height: calc(100vh - var(--nav-h));
+    height: calc(100vh - var(--nav-h) - 3rem);
   }
 
   aside.open::before {
@@ -102,12 +103,6 @@
     left: 0;
     width: calc(100% - 2rem);
     height: 2em;
-    /* background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.7) 50%,
-      rgba(255, 255, 255, 1) 100%
-    ); */
     pointer-events: none;
     z-index: 2;
   }

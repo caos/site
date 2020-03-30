@@ -7,7 +7,6 @@
   export let page;
   export let logo;
   export let title;
-  export let home = "Home";
   export let home_title = "Homepage";
 
   const current = writable(null);
@@ -122,16 +121,6 @@
     top: 0;
   }
 
-  /* ul.open {
-    padding: 0 0 1em 0;
-    background: white;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    border-radius: 0 0 var(--border-r) var(--border-r);
-    align-self: start;
-  } */
-
   ul.open :global(li) {
     display: block;
     text-align: right;
@@ -175,15 +164,6 @@
     color: var(--prime);
   }
 
-  .modal-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
   a {
     color: inherit;
     border-bottom: none;
@@ -203,13 +183,6 @@
       background: none;
     }
 
-    /* ul.open {
-      padding: 0;
-      background: white;
-      border: none;
-      align-self: initial;
-    } */
-
     ul.open :global(li) {
       display: inline;
       text-align: left;
@@ -228,10 +201,6 @@
     ul :global(li) {
       display: inline !important;
     }
-
-    .hide-if-desktop {
-      display: none !important;
-    }
   }
 </style>
 
@@ -248,21 +217,9 @@
       {title}
     </a>
 
-    {#if open}
-      <div
-        class="modal-background hide-if-desktop"
-        on:click={() => (open = false)} />
-    {/if}
-
     <ul
       class="primary"
-      class:open
-      on:touchstart|capture={intercept_touchstart}
-      on:mouseenter={() => (open = true)}
-      on:mouseleave={() => (open = false)}>
-      <li class="hide-if-desktop" class:active={!segment}>
-        <a rel="prefetch" href=".">{home}</a>
-      </li>
+      class:open>
       <slot />
     </ul>
   </nav>
