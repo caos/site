@@ -12,11 +12,11 @@
 </script>
 
 <svelte:head>
-  <title>Migration • Citadel</title>
+  <title>Orbos • Solutions</title>
 
-  <meta name="twitter:title" content="Citadel migration guides" />
-  <meta name="twitter:description" content="the best iam ever" />
-  <meta name="Description" content="The best swissmade iam ever made" />
+  <meta name="twitter:title" content="Orbos Cluster Mananger" />
+  <meta name="twitter:description" content="Meta cluster manager" />
+  <meta name="Description" content="Meta cluster manager" />
 </svelte:head>
 
 <Docs {sections} dir="orbos" />
