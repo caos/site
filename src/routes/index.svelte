@@ -24,7 +24,7 @@
 <Hero tagline="We give you the tools" title="Caos Documentation"></Hero>
 
 <Blurb>
-  <a href="docs" slot="one">
+  <a href="zitadel" slot="one">
     <img src="icons/zitadel-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
         <h2>Zitadel</h2>
 

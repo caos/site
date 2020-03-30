@@ -19,4 +19,4 @@
   <meta name="Description" content="The best swissmade iam ever made" />
 </svelte:head>
 
-<Docs {sections} project="sapper" dir="migrating" />
+<Docs {sections} dir="migrating" />

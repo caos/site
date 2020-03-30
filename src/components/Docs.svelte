@@ -5,8 +5,8 @@
   import { getFragment } from "../utils/navigation";
 
   export let owner = "caos";
-  export let project = "citadel";
-  export let path = "/site/content";
+  export let project = "site";
+  export let path = "/content";
   export let dir = "docs";
   export let edit_title = "edit this section";
   export let sections;
@@ -397,7 +397,7 @@
         {@html section.metadata.title}
         <small>
           <a
-            href="https://github.com/{owner}/citadel/edit/master{path}/{dir}/{section.file}"
+            href="https://github.com/{owner}/site/edit/master{path}/{dir}/{section.file}"
             title={edit_title}>
             <Icon name="edit" />
           </a>
