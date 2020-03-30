@@ -1,0 +1,9 @@
+{
+	"background_color": "#ffffff",
+	"theme_color": "#159794",
+	"name": "Citadel",
+	"short_name": "Citadel",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"icons": []
+}
