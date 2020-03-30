@@ -16,7 +16,7 @@ jobs:
     - name: Install and Build
       run: |
         npm install
-        npx sapper export
+        npm run export
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
