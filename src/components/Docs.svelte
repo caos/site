@@ -397,7 +397,7 @@
         {@html section.metadata.title}
         <small>
           <a
-            href="https://github.com/{owner}/site/edit/master{path}/{dir}/{section.file}"
+            href="https://github.com/{owner}/{project}/edit/master{path}/{dir}/{section.file}"
             title={edit_title}>
             <Icon name="edit" />
           </a>

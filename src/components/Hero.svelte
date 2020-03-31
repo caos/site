@@ -3,7 +3,6 @@
 
 	export let title;
 	export let tagline;
-	export let logotype;
 	export let outline;
 </script>
 

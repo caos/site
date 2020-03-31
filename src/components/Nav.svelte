@@ -5,7 +5,6 @@
 
   export let segment;
   export let page;
-  export let logo;
   export let title;
   export let home_title = "Homepage";
 
