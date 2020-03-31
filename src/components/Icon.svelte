@@ -20,13 +20,6 @@
   }
 </style>
 
-<!--
------------------------------------------------
-	svg icon
-	- https://github.com/jacobmischka/svelte-feather-icon
-	- https://feathericons.com/
------------------------------------------------
--->
 <svg class="icon" width={size} height={size}>
   <use xlink:href="#{name}" />
 </svg>
