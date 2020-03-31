@@ -8,6 +8,7 @@ const dev = NODE_ENV === 'development';
 
 polka()
     .use(
+        'site',
         compression({ threshold: 0 }),
         sirv('static', { dev }),
         sapper.middleware()
