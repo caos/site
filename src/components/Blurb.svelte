@@ -70,7 +70,7 @@
 		top: 0.35em;
 		width: 1em;
 		height: 1em;
-		background: url(/icons/arrow-right.svg);
+		background: url(../icons/arrow-right.svg);
 	}
 
 	.how {

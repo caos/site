@@ -91,8 +91,7 @@ body {
 
 @font-face {
 	font-family: 'ailerons';
-	src: local('ailerons'), local('ailerons'),
-		url('/fonts/ailerons/ailerons.otf') format('opentype');
+	src: local('ailerons'), url('../fonts/ailerons/ailerons.otf') format('opentype');
 }
 
 /*	base reset ----------------------------- */
