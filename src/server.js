@@ -6,7 +6,7 @@ import sirv from 'sirv';
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
-polka() // no basehref
+polka()
     .use(
         compression({ threshold: 0 }),
         sirv('static', { dev }),

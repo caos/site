@@ -6,7 +6,7 @@ title: Introduction
 
 > Zitadel is in early development. This document is also a work-in-progress. If you get stuck, you might don't hesitate to ask for help!
 >
-> See the [orbos guides](orbos) for help setting up your infrastructure
+> See the ... for help setting up your infrastructure
 
 ### What is Zitadel?
 
