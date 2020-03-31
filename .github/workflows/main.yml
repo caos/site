@@ -23,6 +23,6 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: __sapper__/export
+        FOLDER: __sapper__/export/site
         CLEAN: true
         
