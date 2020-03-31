@@ -1,13 +1,16 @@
 <script context="module">
-  export async function preload() {
-    const sections = await this.fetch(`zitadel.json`).then(r => r.json());
-    return { sections };
+  export async function preload(page) {
+          const { slug } = page.params;
+    const sections = await this.fetch(`${slug}.json`).then(r => r.json());
+    return { sections, slug };
   }
 </script>
 
 <script>
-  import Docs from "../../components/Docs.svelte";
 
+  import Docs from "../components/Docs.svelte";
+
+  export let slug;
   export let sections;
 </script>
 
@@ -19,4 +22,4 @@
   <meta name="Description" content="Caos Identy and Access Management Solution" />
 </svelte:head>
 
-<Docs {sections} project="site" dir="zitadel"/>
+<Docs {sections} project="site" dir="{slug}"/>

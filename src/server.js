@@ -6,9 +6,8 @@ import sirv from 'sirv';
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
-polka() // You can also use Express
+polka() // no basehref
     .use(
-        'site',
         compression({ threshold: 0 }),
         sirv('static', { dev }),
         sapper.middleware()
