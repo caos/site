@@ -15,9 +15,9 @@
 <svelte:head>
   <title>Docs</title>
 
-  <meta name="twitter:title" content="Zitadel guides" />
-  <meta name="twitter:description" content="Caos Identy and Access Management Solution" />
-  <meta name="Description" content="Caos Identy and Access Management Solution" />
+  <meta name="twitter:title" content="Caos Docs" />
+  <meta name="twitter:description" content="Caos Documentation Template" />
+  <meta name="Description" content="Caos Documentation Template" />
 </svelte:head>
 
 

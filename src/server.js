@@ -8,6 +8,8 @@ import { BASEPATH } from '../config';
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
+
+console.log('gzgz' + BASEPATH);
 polka()
     .use(
         BASEPATH,

@@ -3,12 +3,12 @@
 	"description": "site",
     "version": "0.0.1",
     "config": {
-        "basepath":"customsite"
+        "basepath":"site"
     },
 	"scripts": {
 		"dev": "sapper dev",
 		"build": "sapper build --legacy",
-		"export": "sapper export --basepath --legacy",
+		"export": "sapper export --basepath $npm_package_config_basepath --legacy",
 		"start": "node __sapper__/build",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
