@@ -22,7 +22,6 @@ const block_types = [
 ];
 
 export default function generate_docs(dirpath, dir) {
-    console.log(dirpath);
     const make_slug = make_session_slug_processor({
         separator: SLUG_SEPARATOR,
         preserve_unicode: SLUG_PRESERVE_UNICODE
@@ -32,7 +31,6 @@ export default function generate_docs(dirpath, dir) {
         .readdirSync(`${dirpath}${dir}`)
         .filter((file) => file[0] !== '.' && path.extname(file) === '.md')
         .map((file) => {
-            console.log(file);
             const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
 
             const { content, metadata } = extract_frontmatter(markdown);

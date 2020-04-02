@@ -21,7 +21,7 @@
 
 <Icons />
 
-<Nav {segment} {page} logo="caos.svg" title="Caos Documentation">
+<Nav {segment} {page} title="Caos Documentation">
   <NavItem external="https://caos.ch">Caos</NavItem>
 
   <NavItem external="https://github.com/caos" title="GitHub Repo">
