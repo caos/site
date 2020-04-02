@@ -9,9 +9,10 @@ const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
 
-console.log('gzgz' + BASEPATH);
+// console.log('gzgz' + BASEPATH);
 polka()
     .use(
+        // 'site',
         BASEPATH,
         compression({ threshold: 0 }),
         sirv('static', { dev }),

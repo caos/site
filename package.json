@@ -7,6 +7,7 @@
     },
 	"scripts": {
 		"dev": "sapper dev",
+        "setup": "echo 'export const BASEPATH = '$npm_package_config_basepath';' >> config.js",
 		"build": "sapper build --legacy",
 		"export": "sapper export --basepath $npm_package_config_basepath --legacy",
 		"start": "node __sapper__/build",
