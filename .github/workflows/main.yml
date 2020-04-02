@@ -16,6 +16,7 @@ jobs:
     - name: Install and Build
       run: |
         npm install
+        npm config set site:basepath ${{ github.event.repository.name }}
         npm run export
 
     - name: Deploy
@@ -23,6 +24,6 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: __sapper__/export
+        FOLDER: __sapper__/export/${{ github.event.repository.name }}
         CLEAN: true
         
