@@ -16,13 +16,14 @@ jobs:
     - name: Install and Build
       run: |
         npm install
-        npm run export
+        npm config set site:basepath $BASEPATH
+        npm run export basepath $BASEPATH
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: __sapper__/export
+        FOLDER: __sapper__/export/$BASEPATH
         CLEAN: true
         

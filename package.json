@@ -1,11 +1,14 @@
 {
 	"name": "site",
 	"description": "site",
-	"version": "0.0.1",
+    "version": "0.0.1",
+    "config": {
+        "basepath":"customsite"
+    },
 	"scripts": {
 		"dev": "sapper dev",
 		"build": "sapper build --legacy",
-		"export": "sapper export --entry zitadel --legacy",
+		"export": "sapper export --basepath --legacy",
 		"start": "node __sapper__/build",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
