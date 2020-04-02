@@ -6,8 +6,8 @@
 
   export let owner = "caos";
   export let project = "site";
-  export let path = "/content";
-  export let dir = "zitadel";
+  export let path = "/docs";
+  export let dir = "";
   export let edit_title = "edit this section";
   export let sections;
   let active_section;
@@ -231,7 +231,7 @@
   .content :global(.anchor) {
     position: absolute;
     display: block;
-    background: url(/icons/link.svg) 0 50% no-repeat;
+    background: url(../icons/link.svg) 0 50% no-repeat;
     background-size: 1em 1em;
     width: 1.4em;
     height: 1em;

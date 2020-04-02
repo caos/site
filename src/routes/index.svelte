@@ -1,3 +1,19 @@
+<!-- <script context="module">
+  export async function preload(page) {
+    const slug = 'general';
+    
+    const sections = await this.fetch(`${slug}.json`).then(r => r.json());
+
+    return { sections, slug};
+  }
+</script>
+
+<script>
+    import Docs from "../components/Docs.svelte";
+    export let slug;
+    export let sections;
+</script> -->
+
 <svelte:head>
   <title>Docs</title>
 
@@ -6,16 +22,6 @@
   <meta name="Description" content="Caos Identy and Access Management Solution" />
 </svelte:head>
 
-<script>
-    // import fs from 'fs';
-
-    // export let files = fs
-    //     .readdirSync(`docs/`)
-    //     .map((file) => {
-
-    //         return file;
-    //     });
-</script>
 
 <style>
     .desc {
@@ -26,4 +32,4 @@
 
 <p class="desc">There's no doc on this path. Provide the docs file in folder /docs/[product] of your repo.</p>
 
-<!-- <p>{files}</p> -->
+<!-- <Docs {sections} project="site" dir="{slug}"/> -->
