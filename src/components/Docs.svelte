@@ -6,8 +6,8 @@
 
   export let owner = "caos";
   export let project = "site";
-  export let path = "/content";
-  export let dir = "zitadel";
+  export let path = "/docs";
+  export let dir = "";
   export let edit_title = "edit this section";
   export let sections;
   let active_section;
