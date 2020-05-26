@@ -21,18 +21,17 @@ const block_types = [
     'tablecell'
 ];
 
-export default function generate_docs(dir) {
+export default function generate_docs(dirpath, dir) {
     const make_slug = make_session_slug_processor({
         separator: SLUG_SEPARATOR,
         preserve_unicode: SLUG_PRESERVE_UNICODE
     });
 
     return fs
-        .readdirSync(`${dir}`)
+        .readdirSync(`${dirpath}${dir}`)
         .filter((file) => file[0] !== '.' && path.extname(file) === '.md')
         .map((file) => {
-            const markdown = fs.readFileSync(`${dir}/${file}`, 'utf-8');
-
+            const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
             const { content, metadata } = extract_frontmatter(markdown);
 
             const section_slug = make_slug(metadata.title);
