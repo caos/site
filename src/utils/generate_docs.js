@@ -1,4 +1,3 @@
-// TODO put this in site-kit? svelte.dev uses Prism instead of hljs
 import fs from 'fs';
 import hljs from 'highlight.js';
 import marked from 'marked';
@@ -21,18 +20,17 @@ const block_types = [
     'tablecell'
 ];
 
-export default function generate_docs(dir) {
+export default function generate_docs(dirpath, dir) {
     const make_slug = make_session_slug_processor({
         separator: SLUG_SEPARATOR,
         preserve_unicode: SLUG_PRESERVE_UNICODE
     });
 
     return fs
-        .readdirSync(`${dir}`)
+        .readdirSync(`${dirpath}${dir}`)
         .filter((file) => file[0] !== '.' && path.extname(file) === '.md')
         .map((file) => {
-            const markdown = fs.readFileSync(`${dir}/${file}`, 'utf-8');
-
+            const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
             const { content, metadata } = extract_frontmatter(markdown);
 
             const section_slug = make_slug(metadata.title);
@@ -77,11 +75,6 @@ export default function generate_docs(dir) {
 
                 const plang = langs[lang];
                 const { value: highlighted } = hljs.highlight(lang, source);
-                // const highlighted = PrismJS.highlight(
-                // 	source,
-                // 	PrismJS.languages[plang],
-                // 	lang
-                // );
 
                 const html = `<div class='${class_name}'>${prefix}<pre class='language-${plang}'><code>${highlighted}</code></pre></div>`;
 

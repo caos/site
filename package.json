@@ -1,20 +1,19 @@
 {
 	"name": "site",
 	"description": "site",
-    "version": "0.0.1",
-    "config": {
-        "basepath":"site"
-    },
+	"version": "0.0.1",
 	"scripts": {
 		"dev": "sapper dev",
 		"build": "sapper build --legacy",
-		"export": "sapper export --basepath $npm_package_config_basepath --legacy",
+		"export": "sapper export --legacy",
 		"start": "node __sapper__/build",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
 		"test": "run-p --race dev cy:run"
 	},
 	"dependencies": {
+		"@actions/core": "^1.2.4",
+		"@actions/github": "^2.2.0",
 		"@polka/send": "^0.4.0",
 		"@sindresorhus/slugify": "^0.9.1",
 		"compression": "^1.7.4",
@@ -22,7 +21,6 @@
 		"highlight.js": "^9.18.1",
 		"marked": "^0.7.0",
 		"polka": "^0.5.2",
-		"prismjs": "^1.19.0",
 		"sirv": "^0.4.2"
 	},
 	"devDependencies": {

@@ -6,7 +6,6 @@
   import NavItem from "../components/NavItem.svelte";
 
   export let segment;
-
   const { page } = stores();
 </script>
 
