@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#159794",
-	"name": "Citadel",
-	"short_name": "Citadel",
+	"name": "Zitadel Docs",
+	"short_name": "Zitadel",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": []
