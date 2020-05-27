@@ -1,5 +1,9 @@
 name: 'Site Generator'
 description: 'Setup a doc page quickly and build your site fast'
+inputs:
+  args:
+    description: 'Arguments for sapper export'
+    required: false
 author: 'caos'
 
 runs:
