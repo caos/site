@@ -1,3 +1,7 @@
+---
+title: Features1
+---
+
 # Features
 
 This is just an outline!

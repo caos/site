@@ -1,3 +1,7 @@
+---
+title: Business
+---
+
 # Business Integration
 
 This is just an outline!

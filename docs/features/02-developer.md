@@ -1,3 +1,7 @@
+---
+title: Developer
+---
+
 # Integrate
 
 This is just an outline!
