@@ -18,10 +18,10 @@ jobs:
       with:
         args: --basepath zitadel
     - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: docs
-          path: __sapper__/export
+      uses: actions/upload-artifact@master
+      with:
+        name: __sapper__/export
+        path: __sapper__/export
   deploy docs:
     name: Deploy
     needs: build
@@ -32,7 +32,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: docs
+          name: __sapper__/export
           path: __sapper__/export
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
