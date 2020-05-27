@@ -9,7 +9,7 @@ LABEL com.github.actions.description="Generates a doc site out of md files"
 LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
-RUN npm install
+# RUN npm install
 
 COPY README.md /
 COPY "entrypoint.sh" "/entrypoint.sh"

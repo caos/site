@@ -9,6 +9,7 @@ env:
 
 jobs:
   builddocs:
+    name: Build Doc Frontend
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
