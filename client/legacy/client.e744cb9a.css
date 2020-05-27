@@ -38,7 +38,7 @@
     --second: rgb(239,139,60);
     --flash: #f54381;
 
-    --nav-back: #2d2e30;
+    --nav-back: #212224;
     --side-nav-back: #212224;
 
     --primary-card: #2d2e30;
@@ -68,7 +68,7 @@
 
 body {
 	--font: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
-	--font-mono: 'Fira Mono', monospace;
+	--font-mono: 'Rubik', 'Fira Mono', monospace;
 }
 
 /*	fonts ---------------------------------- */
