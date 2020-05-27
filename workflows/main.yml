@@ -1,0 +1,19 @@
+name: Docs
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Build Docs
+      uses: caos/site@master
+      with:
+        args: --basepath zitadel
