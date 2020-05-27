@@ -11,7 +11,7 @@ const dev = NODE_ENV === 'development';
 
 polka()
     .use(
-        // 'site',
+        'site',
         // BASEPATH,
         compression({ threshold: 0 }),
         sirv('static', { dev }),
