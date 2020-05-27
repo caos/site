@@ -29,9 +29,9 @@ This contains just some text
 This *must* import, and call, the `start` function from the generated `zitadel` module:
 
 ```js
-import * as citadel from '@zitadel/app';
+import * as zitadel from '@zitadel/app';
 
-citadel.start({
+zitadel.start({
 	target: document.querySelector('#zitadel')
 });
 ```
