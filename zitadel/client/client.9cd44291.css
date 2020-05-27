@@ -222,7 +222,6 @@ pre code {
 	background-color: none;
 }
 
-/* sync CodeMirror with prism  */
 .CodeMirror {
 	font-size: var(--code-fs) !important;
 }
