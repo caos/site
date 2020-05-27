@@ -24,7 +24,7 @@ jobs:
         path: __sapper__/export
   deploydocs:
     name: Deploy
-    needs: build
+    needs: builddocs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
