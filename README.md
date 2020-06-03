@@ -10,9 +10,8 @@ Start the server with `npm run dev`, and navigate to [localhost:3000](http://loc
 
 ## Doc reference
 
-The documentiation is built according to the structure of the docs folder. 
-Because of its radical treeshaking, any pages we want to be included in the exported site have to be added to the --entry option of the sapper export command.
-Assuming the page is deployed on the basepath '/', and the doc file underly the following structure
+Caos Site is a github action that generates a static page out of markdown files. It uses marked.js in combination with highlight.js to compile and style markdown.
+The documentiation is built according to the structure of a docs `folder`[Folder](https://github.com/caos/site/tree/master/docs) located at root of the targeted repository.
 
 ```bash
 ├ docs
@@ -24,13 +23,41 @@ Assuming the page is deployed on the basepath '/', and the doc file underly the 
 │ ├ ├ 00-indroduction.md
 │ │ ├ 01-get-started.md
 │ │ └ 02-concluding.md
+| └ index.svelte
+```
+### Routing
+Route parameters are encoded in filenames and files are mapped to sections.
+According to the configuration above, two routes with the names `zitadel` and `eventstore` are generated.
+
+To have an entrypoint to existing routes, a index.svelte file can be provided to overwrite the homepage.
+`.svelte` files are a superset of HTML. 
+
+```html
+<script>
+	// logic goes here
+</script>
+
+<style>
+	/* styles go here */
+</style>
+
+<!-- markup (zero or more items) goes here -->
 ```
 
-the entry options zitadel and eventstore must be provided.
-The site will then be reachable throw the endpoints /zitadel and /eventstore
+Because of sveltes radical treeshaking, any pages we want to be included in the exported site have to be reachable through the index.svelte page, or have to be added to the --entry option of the sapper export command.
 
+### File structure
+All markdown files have to have a metadata section at the top including the heading of the section
 
-### base path
+```yaml
+---
+title: Deployment
+---
+```
+
+> Important! You can not have duplicate references, so all headings and titles have to be distinct.
+
+## base path
 
 if the base path varies, the following changes have to be made:
 

@@ -1,5 +1,5 @@
 ---
-title: Deploy1
+title: Deployment
 ---
 
 # Deploy
