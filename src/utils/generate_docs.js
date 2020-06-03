@@ -7,6 +7,8 @@ import { SLUG_PRESERVE_UNICODE, SLUG_SEPARATOR } from '../../config';
 import { extract_frontmatter, extract_metadata, langs, link_renderer } from './markdown.js';
 import { make_session_slug_processor } from './slug';
 
+const SEOFILE = 'seo.html';
+
 const block_types = [
     'blockquote',
     'html',
@@ -26,13 +28,15 @@ export default function generate_docs(dirpath, dir) {
         preserve_unicode: SLUG_PRESERVE_UNICODE
     });
 
+    const seotags = get_seo_tags(dirpath, dir, SEOFILE);
+
     return fs
         .readdirSync(`${dirpath}${dir}`)
         .filter((file) => file[0] !== '.' && path.extname(file) === '.md')
         .map((file) => {
             const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
             const { content, metadata } = extract_frontmatter(markdown);
-
+            // console.log(metadata);
             const section_slug = make_slug(metadata.title);
 
             const subsections = [];
@@ -115,15 +119,28 @@ export default function generate_docs(dirpath, dir) {
             });
 
             const html = marked(content, { renderer });
-
             const hashes = {};
 
             return {
                 html: html.replace(/@@(\d+)/g, (m, id) => hashes[id] || m),
+                seo: seotags,
                 metadata,
                 subsections,
                 slug: section_slug,
                 file
             };
         });
+}
+
+function get_seo_tags(dirpath, dir, seofile) {
+    console.log(`${dirpath}${dir}/${seofile}`);
+    var fileContents;
+    try {
+        fileContents = fs.readFileSync(`${dirpath}${dir}/${seofile}`, 'utf-8');
+    } catch (err) {
+        fileContents = '';
+    }
+
+    console.log(fileContents);
+    return fileContents;
 }

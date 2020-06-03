@@ -36,8 +36,6 @@ A Citadel is the core fortified area of a town or city and we are all huge fans 
 * ...
 * ...
 
-
-
 ### Getting started
 
 You need an account first - create one
