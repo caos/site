@@ -48,3 +48,18 @@ There are three simple rules for naming the files that define your routes:
 * A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to `preload`
 * The file `src/routes/index.svelte` corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
 * Files and directories with a leading underscore do *not* create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would *not* create a `/_helpers/datetime` route
+
+
+```html
+<meta name="twitter:title" content="Zitadel guides test" />
+<meta name="twitter:description" content="Caos Identy and Access Management Solution" />
+<meta name="Description" content="Caos Identy and Access Management Solution" />
+```
+
+```js
+console.log('hey buddy');
+```
+
+```yaml
+out: zitadel.c
+```

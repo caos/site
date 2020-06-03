@@ -60,6 +60,7 @@ export default function generate_docs(dirpath, dir) {
                 let class_name = '';
 
                 if (meta) {
+                    console.log(meta);
                     source = lines.slice(1).join('\n');
                     const filename = meta.filename || (lang === 'html' && 'App.svelte');
                     if (filename) {

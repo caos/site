@@ -74,7 +74,6 @@ export const make_session_slug_processor = ({
     const seen = new Set();
 
     return (string) => {
-        console.log(string);
         const slug = processor(string, { separator });
 
         if (seen.has(slug)) throw new Error(`Duplicate slug ${slug}`);
