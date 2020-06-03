@@ -2,6 +2,34 @@
 title: Template syntax
 ---
 
+### Table test
+
+| ```sv
+<script>
+	import Widget from './Widget.svelte';
+</script>
+
+<div>
+	<Widget/>
+</div>
+``` | ```sv
+<script>
+	import Widget from './Widget.svelte';
+</script>
+
+<div>
+	<Widget/>
+</div>
+``` | ```sv
+<script>
+	import Widget from './Widget.svelte';
+</script>
+
+<div>
+	<Widget/>
+</div>
+``` |
+|-------------------------|-------------------------|-------------------------|
 
 ### Tags
 

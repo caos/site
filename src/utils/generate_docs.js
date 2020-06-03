@@ -38,8 +38,6 @@ export default function generate_docs(dirpath, dir) {
 
             const renderer = new marked.Renderer();
 
-            const lexer = new marked.Lexer(options);
-
             let block_open = false;
 
             renderer.link = link_renderer;
