@@ -1,9 +1,5 @@
 ---
 title: Introduction
-seotitle: This is the general seo headline
-seodescription: This is the general seo description
-twittertitle: This is the headline shown on twitter
-twitterdescription: This is the description shown on twitter
 ---
 
 ### Before we begin

@@ -28,7 +28,7 @@ export default function generate_docs(dirpath, dir) {
         preserve_unicode: SLUG_PRESERVE_UNICODE
     });
 
-    const seotags = get_seo_tags(dirpath, dir, SEOFILE);
+    // const seotags = get_seo_tags(dirpath, dir, SEOFILE);
 
     return fs
         .readdirSync(`${dirpath}${dir}`)
@@ -123,7 +123,6 @@ export default function generate_docs(dirpath, dir) {
 
             return {
                 html: html.replace(/@@(\d+)/g, (m, id) => hashes[id] || m),
-                seo: seotags,
                 metadata,
                 subsections,
                 slug: section_slug,
@@ -132,15 +131,15 @@ export default function generate_docs(dirpath, dir) {
         });
 }
 
-function get_seo_tags(dirpath, dir, seofile) {
-    console.log(`${dirpath}${dir}/${seofile}`);
-    var fileContents;
-    try {
-        fileContents = fs.readFileSync(`${dirpath}${dir}/${seofile}`, 'utf-8');
-    } catch (err) {
-        fileContents = '';
-    }
+// function get_seo_tags(dirpath, dir, seofile) {
+//     console.log(`${dirpath}${dir}/${seofile}`);
+//     var fileContents;
+//     try {
+//         fileContents = fs.readFileSync(`${dirpath}${dir}/${seofile}`, 'utf-8');
+//     } catch (err) {
+//         fileContents = '';
+//     }
 
-    console.log(fileContents);
-    return fileContents;
-}
+//     console.log(fileContents);
+//     return fileContents;
+// }
