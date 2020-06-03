@@ -55,7 +55,7 @@ title: Deployment
 ---
 ```
 
-> Important! You can not have duplicate references, so all headings and titles have to be distinct.
+> Important! You can not have duplicate anchors, so all headings and titles have to be distinct.
 
 ### SEO
 Meta tags for SEO can be provided in their own `seo.html` file located in the subfolder.

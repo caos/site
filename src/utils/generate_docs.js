@@ -38,6 +38,8 @@ export default function generate_docs(dirpath, dir) {
 
             const renderer = new marked.Renderer();
 
+            const lexer = new marked.Lexer(options);
+
             let block_open = false;
 
             renderer.link = link_renderer;
@@ -86,6 +88,7 @@ export default function generate_docs(dirpath, dir) {
                 return html;
             };
 
+            // const slugger = new marked.Slugger();
             renderer.heading = (text, level, rawtext) => {
                 const slug = level <= 4 && make_slug(rawtext);
 

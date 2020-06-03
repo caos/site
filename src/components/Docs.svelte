@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import GuideContents from "./GuideContents.svelte"; // TODO rename
   import Icon from "./Icon.svelte";
-  import { getFragment } from "../utils/navigation";
 
   export let owner = "caos";
   export let project = "site";
@@ -29,7 +28,7 @@
       });
     };
 
-    let last_id = getFragment();
+    let last_id = window.location.hash.slice(1);
 
     const onscroll = () => {
       const top = -window.scrollY;
