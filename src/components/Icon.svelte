@@ -1,25 +1,12 @@
 <script>
   export let name;
-  export let size = 20;
+  export let size;
 </script>
 
 <style>
-  .icon {
-    position: relative;
-    overflow: hidden;
-    vertical-align: middle;
-    -o-object-fit: contain;
-    object-fit: contain;
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
+  :global(i) {
+      font-size: 20px;
   }
 </style>
 
-<svg class="icon" width={size} height={size}>
-  <use xlink:href="#{name}" />
-</svg>
+<i class={name} style="font-size: {size}"><use xlink:href="#{name}" /></i>

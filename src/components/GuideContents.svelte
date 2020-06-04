@@ -114,7 +114,7 @@
 
 				{#if section.slug === active_section}
 					<div class="icon-container">
-						<Icon name="arrow-right" />
+						<Icon name="las la-arrow-right" />
 					</div>
 				{/if}
 			</a>
@@ -131,7 +131,7 @@
 
 					{#if subsection.slug === active_section}
 						<div class="icon-container">
-							<Icon name="arrow-right" />
+							<Icon name="las la-arrow-right" />
 						</div>
 					{/if}
 				</a>

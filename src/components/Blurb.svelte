@@ -64,17 +64,6 @@
 		text-decoration: underline;
 	}
 
-	.box :global(.learn-more)::after, .box :global(.cta) :global(a)::after {
-		content: '';
-		position: absolute;
-		display: block;
-		right: 0;
-		top: 0.35em;
-		width: 1em;
-		height: 1em;
-		background: url(/icons/arrow-right.svg);
-	}
-
 	.how {
 		/* needed to prevent the <pre> from
 		   breaking the grid layout */
