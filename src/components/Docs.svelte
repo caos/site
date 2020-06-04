@@ -230,14 +230,21 @@
   .content :global(.anchor) {
     position: absolute;
     display: block;
-    background: url(../icons/link.svg) 0 50% no-repeat;
+    /* TODO replace link icon */
+    /* background: url(../icons/link.svg) 0 50% no-repeat; */
     background-size: 1em 1em;
     width: 1.4em;
     height: 1em;
     left: -1.3em;
     opacity: 0;
+    color: white;
     transition: opacity 0.2s;
     border: none !important; /* TODO get rid of linkify */
+  }
+
+  .content :global(.anchor) :global(i) {
+    color: #81868a;
+    font-size: 24px;
   }
 
   @media (min-width: 768px) {
@@ -398,7 +405,7 @@
           <a
             href="https://github.com/{owner}/{project}/edit/master{path}/{dir}/{section.file}"
             title={edit_title}>
-            <Icon name="las la-edit" size="24px" />
+            <Icon name="las la-external-link-alt" size="24px" />
           </a>
         </small>
       </h2>
