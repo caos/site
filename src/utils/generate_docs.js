@@ -32,7 +32,6 @@ export default function generate_docs(dirpath, dir) {
         .map((file) => {
             const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
             const { content, metadata } = extract_frontmatter(markdown);
-
             const section_slug = make_slug(metadata.title);
 
             const subsections = [];
@@ -61,6 +60,7 @@ export default function generate_docs(dirpath, dir) {
                 let class_name = '';
 
                 if (meta) {
+                    console.log(meta);
                     source = lines.slice(1).join('\n');
                     const filename = meta.filename || (lang === 'html' && 'App.svelte');
                     if (filename) {
@@ -86,6 +86,7 @@ export default function generate_docs(dirpath, dir) {
                 return html;
             };
 
+            // const slugger = new marked.Slugger();
             renderer.heading = (text, level, rawtext) => {
                 const slug = level <= 4 && make_slug(rawtext);
 
@@ -102,7 +103,7 @@ export default function generate_docs(dirpath, dir) {
                 return `
 					<h${level}>
 						<span id="${slug}" class="offset-anchor" ${level > 4 ? 'data-scrollignore' : ''}></span>
-						<a href="${dir}#${slug}" class="anchor" aria-hidden="true"></a>
+						<a href="${dir}#${slug}" class="anchor" aria-hidden="true"> <i class="las la-link"></i> </a>
 						${text}
 					</h${level}>`;
             };
@@ -115,7 +116,6 @@ export default function generate_docs(dirpath, dir) {
             });
 
             const html = marked(content, { renderer });
-
             const hashes = {};
 
             return {

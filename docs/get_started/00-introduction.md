@@ -1,43 +1,78 @@
 ---
 title: Introduction
-seotitle: This is the general seo headline
-seodescription: This is the general seo description
-twittertitle: This is the headline shown on twitter
-twitterdescription: This is the description shown on twitter
 ---
 
 ### Before we begin
 
-> Zitadel is in early development. This document is also a work-in-progress. If you get stuck, you might don't hesitate to ask for help!
->
-> See the ... for help setting up your infrastructure
+> This is an early version of our doc generator. Some things may change until we hit version 1.0.
+> This documentation is also a WIP, so if you might run into issues, reach out for help.
 
-### What is Zitadel?
+### What is this?
 
-Zitadel is yet another identity and access management. There are two basic concepts:
+This is our automated document generator. Its main purpose is to deploy a fully equipped doc page out of any repository.
 
-* Full scalability and adaptability
-* Total control and monitorability
+It is a Github Action so it can be integrated into your github workflow.
+The project is based on `svelte` and its framework `sapper`, so its designed to build without any useless bulk.
 
-Building a role system with all the modern best practices is fiendishly complicated. Zitadel offers you all customizability in a nice scalable fashion out of the box so that you can get on with the creative part.
+### Integration
 
+To build a doc site on your personal repository your have to integrate the doc build into your github workflow.
 
-### Why the name?
+The following workflow deploys a doc site on github pages:
 
-A Citadel is the core fortified area of a town or city and we are all huge fans of zelta. So we took the best out of both worlds and created zitadel.
+```yaml
+name: Docs
+on:
+  push:
+    branches:
+      - master
 
-### Comparison with other IAM solutions
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-[Zitadel](https://github.com/caos/zitadel) is not just like all the other IAMs. It's opensource and it coples with many more features
+jobs:
+  builddocs:
+    name: Build Doc Frontend
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Build Docs
+      uses: caos/site@master
+      with:
+        args: --basepath ${{ github.event.repository.name }}
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: export
+        path: __sapper__/export/${{ github.event.repository.name }}
+  deploydocs:
+    name: Deploy
+    needs: builddocs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: export
+          path: __sapper__/export/${{ github.event.repository.name }}
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: __sapper__/export/${{ github.event.repository.name }}
+          CLEAN: true
 
-* Take a look at Orbos our meta cluster manager
-* The most relevant part of an identity and access management system is its monitorability.(see the [monitorability](get_started#Monitorability) section below) 
-* ...
-* ...
-* ...
+```
 
+### Manually run the project
 
+```bash
+npm i
+```
 
-### Getting started
+Start the server with `npm run dev`, and navigate to [localhost:3000](http://localhost:3000).
 
-You need an account first - create one

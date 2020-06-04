@@ -1,9 +1,9 @@
 <script>
   import { stores } from "@sapper/app";
-  import Icons from "../components/Icons.svelte";
   import Icon from "../components/Icon.svelte";
   import Nav from "../components/Nav.svelte";
   import NavItem from "../components/NavItem.svelte";
+  import manifest from '../../static/manifest.json';
 
   export let segment;
   const { page } = stores();
@@ -18,13 +18,11 @@
   }
 </style>
 
-<Icons />
-
-<Nav {segment} {page} title="Caos Documentation">
-  <NavItem external="https://caos.ch">Caos</NavItem>
+<Nav {segment} {page} title="{manifest.name}">
+  <!-- <NavItem external="https://caos.ch">Caos</NavItem> -->
 
   <NavItem external="https://github.com/caos" title="GitHub Repo">
-    <Icon name="github" />
+    <Icon name="lab la-github" size="24px"></Icon>
   </NavItem>
 </Nav>
 

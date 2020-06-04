@@ -6,6 +6,7 @@ let json;
 
 export function get(req, res) {
     if (!json || process.env.NODE_ENV !== 'production') {
+        console.log(req.params.slug);
         json = JSON.stringify(generate_docs('docs/', req.params.slug)); // TODO it errors if I send the non-stringified value
     }
 

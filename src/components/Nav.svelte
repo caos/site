@@ -1,7 +1,6 @@
 <script>
   import { onMount, setContext } from "svelte";
   import { writable } from "svelte/store";
-  import Icon from "./Icon.svelte";
 
   export let segment;
   export let page;
@@ -55,9 +54,10 @@
     justify-content: space-between;
     width: 100vw;
     height: var(--nav-h);
-    padding: 0 var(--side-nav);
+    padding: 0 3rem;
     margin: 0 auto;
-    background-color: #212224;
+    backdrop-filter: saturate(100%) blur(10px);
+    background-color: #21222420;
     color: white;
     box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0, 0, 0, 0.5);
     font-family: var(--font);
@@ -77,11 +77,11 @@
     left: 0;
     width: 100vw;
     height: var(--nav-h);
-    padding: 0 var(--side-nav) 0 var(--side-nav);
+    padding: 0 32px 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--nav-back);
+    background-color: transparent;
     transform: none;
     transition: none;
     box-shadow: none;
@@ -106,7 +106,6 @@
   ul {
     position: relative;
     padding: 0 3rem 0 0;
-    background: url(/icons/chevron.svg) calc(100% - 1em) 0.05em no-repeat;
     background-size: 1em 1em;
   }
 

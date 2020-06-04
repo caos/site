@@ -1,5 +1,64 @@
+<script context="module">
+    export async function preload(page, session) {    
+        let workflow = '';
+        try {
+            workflow = `name: Docs
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  builddocs:
+    name: Build Doc Frontend
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Build Docs
+      uses: caos/site@master
+      with:
+        args: --basepath \${{ github.event.repository.name }}
+    - name: Archive Production Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: export
+        path: __sapper__/export/\${{ github.event.repository.name }}
+  deploydocs:
+    name: Deploy
+    needs: builddocs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: export
+          path: __sapper__/export/\${{ github.event.repository.name }}
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: \${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: __sapper__/export/\${{ github.event.repository.name }}
+          CLEAN: true
+`;//await this.fetch(`.github/workflows/main.yml`, 'utf-8').then(x => x.text());
+        } catch (err) {
+            console.error(err);
+            workflow = '';
+        }
+        return {workflow};
+    }
+</script>
+
 <script>
-  import Blurb from "../components/Blurb.svelte";
+    import Split from "../components/Split.svelte";
+    import Section from '../components/Section.svelte';
+	export let workflow;
 </script>
 
 <style>
@@ -9,6 +68,11 @@
         right: 0;
         height: 70vh;
     }
+
+    .logo {
+        width: 100px;
+        margin-bottom: 1rem;
+    }
 </style>
 
 <svelte:head>
@@ -17,49 +81,30 @@
   </title>
 </svelte:head>
 
-<img class="caos-back" src="icons/caos-logo-outline-1px-pictureonly.svg" alt="caos logo">
+<img class="caos-back" src="logos/caos-logo-outline-1px-pictureonly.svg" alt="caos logo">
 
-<Blurb>
-  <a href="introduction" slot="one">
-    <img src="icons/zitadel-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
-        <h2>Introduction</h2>
-    <p>Get introduced to our Identity and Access Management Solution</p>
+<Section>
+<img class="logo" src="icons/android-chrome-256x256.png" alt="logo">
 
-    <span class="learn-more">learn more</span>
-  </a>
+    <h2>This is the doc generator</h2>
+    <p>Please take a look at the demo <a href="get_started" >here</a></p>
+<Split>
+    <div class="description" slot="what">
+        <p>
+       To integrate this generator to your repository, add this build to your workflow!
+        </p>
 
-  <a href="get_started" slot="two">
-    <img src="icons/zitadel-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
-    <h2>Get Started</h2>
-    <p>See what we offer and learn how to integrate your solutions</p>
+        <p>To learn more about conventions used, <a href="get_started">take a look here</a></p>
+    </div>
 
-    <span class="learn-more">learn more</span>
-  </a>
-
-  <a href="features" slot="three">
-    <img src="icons/zitadel-logo-solo-darkdesign.svg" alt="zitadel-logo"/>
-    <h2>Features</h2>
-    <p>See what we offer and learn how to integrate your solutions</p>
-
-    <span class="learn-more">learn more</span>
-  </a>
-
-  <div class="description" slot="what">
-    <p>
-      Zitadel is the most complete access management platform for your workforce
-      and customers, securing all your critical resources from cloud to ground.
-    </p>
-
-    <p>Unlike ...</p>
-  </div>
-
-  <div
-    style="grid-area: start; display: flex; flex-direction: column; min-width: 0"
-    slot="how">
-    <pre
-      class="language-bash"
-      style="margin: 0 0 1em 0; min-width: 0; min-height: 0">
-      # asdf
-    </pre>
-  </div>
-</Blurb>
+    <div
+        style="grid-area: start; display: flex; flex-direction: column; min-width: 0"
+        slot="how">
+        <pre
+        class="language-bash"
+        style="margin: 0 0 1em 0; min-width: 0; min-height: 0">
+        {workflow}
+        </pre>
+    </div>
+</Split>
+</Section>
