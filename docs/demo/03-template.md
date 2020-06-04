@@ -4,7 +4,7 @@ title: Template syntax
 
 ### Table test
 
-| ```sv
+```html
 <script>
 	import Widget from './Widget.svelte';
 </script>
@@ -12,7 +12,8 @@ title: Template syntax
 <div>
 	<Widget/>
 </div>
-``` | ```sv
+```
+```html
 <script>
 	import Widget from './Widget.svelte';
 </script>
@@ -20,7 +21,8 @@ title: Template syntax
 <div>
 	<Widget/>
 </div>
-``` | ```sv
+```
+```html
 <script>
 	import Widget from './Widget.svelte';
 </script>
@@ -28,8 +30,7 @@ title: Template syntax
 <div>
 	<Widget/>
 </div>
-``` |
-|-------------------------|-------------------------|-------------------------|
+```
 
 ### Tags
 
@@ -64,20 +65,11 @@ By default, attributes work exactly like their HTML counterparts.
 
 As in HTML, values may be unquoted.
 
-```sv
-<input type=checkbox>
-```
-
-```sv
-<input type=checkbox>
-```
+second row
 
 ---
 
-
-```sv
-<input type=checkbox>
-```
+second row
 
 ---
 
