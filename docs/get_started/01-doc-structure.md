@@ -50,20 +50,20 @@ Markdown files are compiled to html and styled with a custom theme scheme (curre
 Currently the `marked.js` renderer is taking care of this markdown files, treating some syntax as custom and some as default.
 Take a look at the sections below to get an understanding of whats going on.
 
-#### Links
+#### links
 
 Links to external targets (starting with http) are opened in a new tab.
 
 If you want to reference to an other article of your doc page, you can use the `title` concatenated to your `route`.
 
 ---
-This link takes you to [General Structure](doc_syntax#General_Structure).
+This link takes you to [General Structure](get_started#General_Structure).
 
 ```md
-[General Structure](doc_syntax#General_Structure)
+[General Structure](get_started#General_Structure)
 ```
 
-#### Headings
+#### headings
 
 Headings of level three and four are slugged, so headings like
 ```md
@@ -76,7 +76,7 @@ will appear in the navigation and can be referenced by links.
 > The meta-data title and headings of your markdown files are slugged, so that a navigation can be build.
 > Make sure all titles and headings are distinct, otherwise your build will end up failing!
 
-#### Code
+#### code
 
 Code is highlighted accoding to the specified language
 
@@ -106,16 +106,17 @@ Left block can be <strong>anything</strong>.
 ```js
     console.log('This can be any code block');
 ```
-
-#### Other
+This can be useful to explain a code snipped.
+#### other
 
 ##### blockquote
+if you have to highlight something noteworthy.
 
 ```md
-> This is a blockquote
+> This is a blockquote and it contains important infos
 ```
 
-> This is a blockquote
+> This is a blockquote and it contains important infos
 
 ##### html
 
@@ -127,8 +128,10 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
 
 <div style="border: 1px solid white; padding: 1rem; font-style: italic; margin-bottom: 20px;">hello</div>
 
-* heading
-* hr
+##### other markdown syntax
+
+These are other blocks which are highlighted but have standard conventions.
+
 * list
 * listitem
 * paragraph

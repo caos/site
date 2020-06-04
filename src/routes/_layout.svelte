@@ -18,7 +18,7 @@
 </style>
 
 <Nav {segment} {page} title="Caos Documentation">
-  <NavItem external="https://caos.ch">Caos</NavItem>
+  <!-- <NavItem external="https://caos.ch">Caos</NavItem> -->
 
   <NavItem external="https://github.com/caos" title="GitHub Repo">
     <Icon name="lab la-github" size="24px"></Icon>

@@ -84,17 +84,17 @@ jobs:
 <img class="caos-back" src="logos/caos-logo-outline-1px-pictureonly.svg" alt="caos logo">
 
 <Section>
-<img class="logo" src="icons/android-chrome-512x512.png" alt="logo">
+<img class="logo" src="icons/android-chrome-256x256.png" alt="logo">
 
     <h2>This is the doc generator</h2>
-    <p>Please take a look at the demo</p>
+    <p>Please take a look at the demo <a href="get_started" >here</a></p>
 <Split>
     <div class="description" slot="what">
         <p>
        To integrate this generator to your repository, add this build to your workflow!
         </p>
 
-        <p>Unlike ...</p>
+        <p>To learn more about conventions used, <a href="get_started">take a look here</a></p>
     </div>
 
     <div
