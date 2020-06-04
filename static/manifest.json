@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#159794",
-	"name": "Zitadel Docs",
-	"short_name": "Zitadel",
+	"name": "Caos Docs",
+	"short_name": "Caos Docs",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [
