@@ -52,7 +52,7 @@
 		transition: color 0.2s;
 		border-bottom: none;
 		padding: 0;
-		color: var(--second);
+		color: var(--dark-text);
 	}
 
 	.section {
@@ -74,7 +74,8 @@
 	.section:hover,
 	.subsection:hover,
 	.active {
-		color: var(--flash);
+        color: var(--flash);
+        font-weight: 500;
 	}
 
 	.subsection[data-level="4"] {

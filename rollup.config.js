@@ -1,3 +1,4 @@
+import json from '@rollup/plugin-json';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
@@ -26,7 +27,8 @@ export default {
             svelte({
                 dev,
                 hydratable: true,
-                emitCss: true
+                emitCss: true,
+                // include: 'src/docs/**/*.json',
             }),
             resolve(),
             commonjs(),
@@ -50,7 +52,9 @@ export default {
 
             !dev && terser({
                 module: true
-            })
+            }),
+
+            json()
         ],
         onwarn,
     },
@@ -68,7 +72,8 @@ export default {
                 dev
             }),
             resolve(),
-            commonjs()
+            commonjs(),
+            json()
         ],
         external: Object.keys(pkg.dependencies).concat(
             require('module').builtinModules || Object.keys(process.binding('natives'))
@@ -89,5 +94,5 @@ export default {
             !dev && terser()
         ],
         onwarn,
-    }
+    },
 };

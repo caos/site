@@ -19,6 +19,10 @@ This folder contains subfolders that are mapped to routes of your doc page later
 │ ├ ├ 00-indroduction.md
 │ │ ├ 01-get-started.md
 │ │ └ 02-concluding.md
+  ├ manifest.json
+  ├ static
+  │ ├ favicon.ico
+  │ ├ android-chrome-192x192.png
   └ index.svelte
 ```
 

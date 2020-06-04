@@ -3,6 +3,7 @@
   import Icon from "../components/Icon.svelte";
   import Nav from "../components/Nav.svelte";
   import NavItem from "../components/NavItem.svelte";
+  import manifest from '../../static/manifest.json';
 
   export let segment;
   const { page } = stores();
@@ -17,7 +18,7 @@
   }
 </style>
 
-<Nav {segment} {page} title="Caos Documentation">
+<Nav {segment} {page} title="{manifest.name}">
   <!-- <NavItem external="https://caos.ch">Caos</NavItem> -->
 
   <NavItem external="https://github.com/caos" title="GitHub Repo">

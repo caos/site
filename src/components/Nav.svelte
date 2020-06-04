@@ -77,7 +77,7 @@
     left: 0;
     width: 100vw;
     height: var(--nav-h);
-    padding: 0 3rem 0 3rem;
+    padding: 0 32px 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
