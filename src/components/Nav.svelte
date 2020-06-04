@@ -106,7 +106,6 @@
   ul {
     position: relative;
     padding: 0 3rem 0 0;
-    background: url(/icons/chevron.svg) calc(100% - 1em) 0.05em no-repeat;
     background-size: 1em 1em;
   }
 

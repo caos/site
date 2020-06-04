@@ -398,7 +398,7 @@
           <a
             href="https://github.com/{owner}/{project}/edit/master{path}/{dir}/{section.file}"
             title={edit_title}>
-            <Icon name="edit" />
+            <Icon name="las la-edit" size="24px" />
           </a>
         </small>
       </h2>
@@ -415,6 +415,6 @@
   </div>
 
   <button on:click={() => (show_contents = !show_contents)}>
-    <Icon name={show_contents ? 'close' : 'menu'} />
+    <Icon name={show_contents ? 'las la-window-close' : 'las la-bars'} />
   </button>
 </aside>
