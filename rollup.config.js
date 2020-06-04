@@ -27,8 +27,7 @@ export default {
             svelte({
                 dev,
                 hydratable: true,
-                emitCss: true,
-                // include: 'src/docs/**/*.json',
+                emitCss: true
             }),
             resolve(),
             commonjs(),

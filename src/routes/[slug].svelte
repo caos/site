@@ -1,13 +1,9 @@
 <script context="module">
-    // import get_seo from '../utils/get_seo.js';
-
     export async function preload(page) {
             const { slug } = page.params;
         const sections = await this.fetch(`${slug}.json`).then(r => r.json());
-    // const tags = import(`docs/${slug}/seo.json`);
-        const { tags } = await import(`../../docs/${slug}/seo.json`);
-    console.log(tags);
-
+        // const { tags } = await import(`docs/${slug}/seo.json`);
+        const tags = [];
         return { sections, slug, tags };
     }
 </script>
