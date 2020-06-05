@@ -2,7 +2,8 @@
   import { onMount } from "svelte";
   import GuideContents from "./GuideContents.svelte"; // TODO rename
   import Icon from "./Icon.svelte";
-
+  import manifest from '../../static/manifest.json';
+export let lang = manifest.lang;
   export let owner = "caos";
   export let project = "site";
   export let path = "/docs";
@@ -418,7 +419,7 @@
 <aside bind:this={aside} class="sidebar-container" class:open={show_contents}>
   <div class="sidebar" on:click={() => (show_contents = false)}>
     <!-- scroll container -->
-    <GuideContents {dir} {sections} {active_section} {show_contents} />
+    <GuideContents {lang} {dir} {sections} {active_section} {show_contents} />
   </div>
 
   <button on:click={() => (show_contents = !show_contents)}>

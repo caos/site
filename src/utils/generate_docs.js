@@ -34,12 +34,13 @@ export default function generate_docs(dirpath, dir, lang = 'en') {
 
     return fs
         .readdirSync(`${dirpath}${dir}`)
-        .filter((file) => file[0] !== '.' && path.extname(file) === '.md' && file.endsWith(`.${lang}.md`))
+        .filter((file) => {
+            return file[0] !== '.' && path.extname(file) === '.md' && file.endsWith(`.${lang}.md`);
+        })
         .map((file) => {
             const markdown = fs.readFileSync(`${dirpath}${dir}/${file}`, 'utf-8');
             const { content, metadata } = extract_frontmatter(markdown);
             const section_slug = make_slug(metadata.title);
-
             const subsections = [];
 
             const renderer = new marked.Renderer();
@@ -49,7 +50,6 @@ export default function generate_docs(dirpath, dir, lang = 'en') {
             renderer.link = link_renderer;
 
             renderer.hr = (str) => {
-                console.log(str);
                 block_open = true;
 
                 return '<div class="side-by-side"><div class="copy">';

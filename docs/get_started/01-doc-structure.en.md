@@ -16,14 +16,20 @@ Other files referenced by the homepage or within markdown has to be included to 
 
 ```bash
 ├ docs
-│ ├ getting_started
-│ │ ├ 00-indroduction.md
-│ │ ├ 01-get-started.md
-│ │ └ 02-concluding.md
+│ ├ get_started
+│ │ ├ 00-indroduction.en.md
+│ │ ├ 00-indroduction.de.md
+│ │ ├ 00-indroduction.it.md
+│ │ ├ 01-get-started.en.md
+│ │ ├ 01-get-started.de.md
+│ │ ├ 01-get-started.it.md
+│ │ ├ 02-concluding.en.md
+│ │ ├ 02-concluding.de.md
+│ │ └ 02-concluding.it.md
 │ ├ api
-│ ├ ├ 00-indroduction.md
-│ │ ├ 01-get-started.md
-│ │ └ 02-concluding.md
+│ ├ ├ 00-indroduction.en.md
+│ │ ├ 01-get-started.en.md
+│ │ └ 02-concluding.en.md
   ├ static
   │ ├ manifest.json
   │ ├ favicon.ico
@@ -166,6 +172,8 @@ These are other blocks which are highlighted but have standard conventions.
 
 ### Translating the API docs
 
-Anchors are automatically generated using headings in the documentation and by default (for the english language) they are latinised to make sure the URL is always conforming to RFC3986.
+Default language is set in manifest.json. Make sure an attribute `lang` is set.
+
+Anchors are automatically generated using headings in the documentation and by default they are latinised to make sure the URL is always conforming to RFC3986.
 
 If we need to translate the API documentation to a language using unicode chars, we can setup this app to export the correct anchors by setting up `SLUG_PRESERVE_UNICODE` to `true` in `config.js`.
