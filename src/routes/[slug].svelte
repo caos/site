@@ -9,23 +9,20 @@
 </script>
 
 <script>
-  import Docs from "../components/Docs.svelte";
-  export let slug;
-  export let sections;
-  export let tags; 
-
-console.log(tags);
+    import Docs from "../components/Docs.svelte";
+    export let slug;
+    export let sections;
+    export let tags; 
+    import manifest from '../../static/manifest.json';
+    console.log(sections[1].html)
 </script>
 
 <svelte:head>
-  <title>Docs • Zitadel</title>
-    <!-- {@html seotags} -->
-    
+  <title>{manifest.name} • {slug}</title>    
+
     {#each tags as { name, content }, i}
      <meta name={name} content={content} />
 	{/each}
-
-  <meta name="twitter:title" content="Zitadel guides" />
 </svelte:head>
 
 <Docs {sections} project="site" dir="{slug}"/>
