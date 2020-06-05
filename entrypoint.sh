@@ -2,10 +2,9 @@
 
 set -e
 
-ls -la
-
 # lopp over docs folder
 cd docs/
+ls -la
 t=""
 for dir in */
 do
