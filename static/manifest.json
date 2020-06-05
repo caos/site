@@ -1,7 +1,8 @@
 {
 	"background_color": "#ffffff",
 	"theme_color": "#159794",
-	"name": "Caos Docs",
+    "name": "Caos Docs",
+    "lang": "en",
 	"short_name": "Caos Docs",
 	"display": "minimal-ui",
 	"start_url": "/",

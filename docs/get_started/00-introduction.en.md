@@ -16,7 +16,7 @@ The project is based on `svelte` and its framework `sapper`, so its designed to 
 
 ### Integration
 
-To build a doc site on your personal repository your have to integrate the doc build into your github workflow.
+To build a doc site on your personal repository copy the `docs` folder to your  your have to integrate the doc build into your github workflow.
 
 The following workflow deploys a doc site on github pages:
 

@@ -212,7 +212,8 @@
   }
 
   .content section:first-of-type > h2 {
-    margin-top: 0;
+    margin-top: -8rem;
+    border-top: none;
   }
 
   .content :global(h4) {
@@ -396,7 +397,6 @@
     <section data-id={section.slug}>
       <h2>
         <span class="offset-anchor" id={section.slug} />
-
         <!-- svelte-ignore a11y-missing-content -->
         <a href="{dir}#{section.slug}" class="anchor" aria-hidden />
 

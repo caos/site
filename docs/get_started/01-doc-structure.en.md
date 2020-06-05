@@ -7,7 +7,12 @@ description: This document explains how syntax is rendered.
 
 To deploy a successful build, you need to have a `docs` folder on your root directory.
 
-This folder contains subfolders that are mapped to routes of your doc page later.
+This folder contains subfolders that are mapped to routes of your doc page later,
+a `index.svelte` file for the homepage, and
+a `static` folder for all assets and metadata.
+
+The `index.svelte` as well as the static folder with a `manifest.json` is mandatory, otherwise the build will fail.
+Other files referenced by the homepage or within markdown has to be included to the static folder.
 
 ```bash
 ├ docs
@@ -19,8 +24,8 @@ This folder contains subfolders that are mapped to routes of your doc page later
 │ ├ ├ 00-indroduction.md
 │ │ ├ 01-get-started.md
 │ │ └ 02-concluding.md
-  ├ manifest.json
   ├ static
+  │ ├ manifest.json
   │ ├ favicon.ico
   │ ├ android-chrome-192x192.png
   └ index.svelte
