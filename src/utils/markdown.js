@@ -17,6 +17,12 @@ export function extract_frontmatter(markdown) {
 export function extract_metadata(line, lang) {
     try {
         if (lang === 'html' && line.startsWith('<!--') && line.endsWith('-->')) {
+            console.log(line);
+            return fleece.evaluate(line.slice(4, -3).trim());
+        }
+
+        if (lang === 'codeblock' && line.startsWith('<!--') && line.endsWith('-->')) {
+            console.log(line);
             return fleece.evaluate(line.slice(4, -3).trim());
         }
 

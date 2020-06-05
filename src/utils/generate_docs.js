@@ -42,11 +42,16 @@ export default function generate_docs(dirpath, dir) {
 
             renderer.link = link_renderer;
 
-            renderer.hr = () => {
+            renderer.hr = (str) => {
+                console.log(str);
                 block_open = true;
 
                 return '<div class="side-by-side"><div class="copy">';
             };
+
+            // renderer.list = (src) => {
+            //     console.log(src);
+            // };
 
             renderer.code = (source, lang) => {
                 source = source.replace(/^ +/gm, (match) => match.split('    ').join('\t'));
@@ -76,9 +81,7 @@ export default function generate_docs(dirpath, dir) {
                 const plang = langs[lang];
                 const { value: highlighted } = hljs.highlight(lang, source);
 
-                const html = `
-                <CodeTable></CodeTable>
-                <div class='${class_name}'>${prefix}<pre class='language-${plang}'><code>${highlighted}</code></pre></div>`;
+                const html = `<div class='${class_name}'>${prefix}<pre class='language-${plang}'><code>${highlighted}</code></pre></div>`;
 
                 if (block_open) {
                     block_open = false;
