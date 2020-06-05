@@ -1,6 +1,6 @@
 <script>
   export let name;
-  export let size;
+  export let size = '20px';
 </script>
 
 <style>

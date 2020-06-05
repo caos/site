@@ -90,6 +90,22 @@ Code is highlighted accoding to the specified language
     ```
 ```
 
+#### code switcher
+
+Code is highlighted accoding to the specified language
+
+```html
+    <a href="link"></a>
+```
+
+```js
+    console.log('');
+```
+
+```yaml
+    config: main.yml
+```
+
 #### hr
 
 hr can be used to split content, but it will work for code blocks on the right only.

@@ -58,6 +58,7 @@ jobs:
 <script>
     import Split from "../components/Split.svelte";
     import Section from '../components/Section.svelte';
+    import CodeTable from '../components/CodeTable.svelte';
 	export let workflow;
 </script>
 
@@ -83,6 +84,9 @@ jobs:
 
 <img class="caos-back" src="logos/caos-logo-outline-1px-pictureonly.svg" alt="caos logo">
 
+<Section>
+<CodeTable></CodeTable>
+</Section>
 <Section>
 <img class="logo" src="icons/android-chrome-256x256.png" alt="logo">
 
