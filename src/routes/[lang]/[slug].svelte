@@ -1,7 +1,8 @@
 <script context="module">
-    export async function preload(page) {
-            const { slug } = page.params;
-        const sections = await this.fetch(`${slug}.json`).then(r => r.json());
+    export async function preload({params}) {
+        const {lang, slug} = params;
+        console.log(params);
+        const sections = await this.fetch(`${lang}/${slug}.json`).then(r => r.json());
         // const { tags } = await import(`docs/${slug}/seo.json`);
         const tags = [];
         return { sections, slug, tags };
@@ -9,11 +10,11 @@
 </script>
 
 <script>
-    import Docs from "../components/Docs.svelte";
+    import manifest from '../../../static/manifest.json';
+    import Docs from "../../components/Docs.svelte";
     export let slug;
     export let sections;
-    export let tags; 
-    import manifest from '../../static/manifest.json';
+    export let tags;
 </script>
 
 <svelte:head>

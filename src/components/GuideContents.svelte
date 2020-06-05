@@ -2,6 +2,7 @@
 	import { afterUpdate } from 'svelte';
 	import Icon from './Icon.svelte';
     import CodeTable from './CodeTable.svelte';
+    export let lang = 'en';
 	export let dir = '';
 	export let sections = [];
 	export let active_section = null;
@@ -110,7 +111,7 @@
 >
 	{#each sections as section}
 		<li>
-			<a class="section" class:active="{section.slug === active_section}" href="{dir}#{section.slug}">
+			<a class="section" class:active="{section.slug === active_section}" href="{lang}/{dir}#{section.slug}">
 				{@html section.metadata.title}
 
 				{#if section.slug === active_section}
@@ -125,7 +126,7 @@
 				<a
 					class="subsection"
 					class:active="{subsection.slug === active_section}"
-					href="{dir}#{subsection.slug}"
+					href="{lang}/{dir}#{subsection.slug}"
 					data-level="{subsection.level}"
 				>
 					{@html subsection.title}

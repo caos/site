@@ -19,7 +19,9 @@
 </style>
 
 <Nav {segment} {page} title="{manifest.name}">
-  <!-- <NavItem external="https://caos.ch">Caos</NavItem> -->
+  <NavItem external="de">DE</NavItem>
+    <NavItem external="it">IT</NavItem>
+  <NavItem external="en">EN</NavItem>
 
   <NavItem external="https://github.com/caos" title="GitHub Repo">
     <Icon name="lab la-github" size="24px"></Icon>
