@@ -1,8 +1,6 @@
 name: Docs
 on:
   push:
-    branches:
-      - master
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,6 +25,7 @@ jobs:
     name: Deploy
     needs: builddocs
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
