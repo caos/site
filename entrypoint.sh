@@ -21,7 +21,8 @@ HOMEPAGE=/docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
     echo "$HOMEPAGE exist, copy to routes"
     cp docs/index.svelte src/routes/index.svelte
-else 
+else
+    echo "$HOMEPAGE doesn't exist"
     exit 1
 fi
 
@@ -30,6 +31,7 @@ if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
     cp -r docs/static .
 else
+    echo "$DIR folder doesn't exist"
     exit 1
 fi
 
