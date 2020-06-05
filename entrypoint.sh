@@ -16,7 +16,7 @@ echo "$t"
 cd ..
 
 # copy static and manifest
-HOMEPAGE=/docs/index.svelte
+HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
     echo "$HOMEPAGE exist, copy to routes"
     cp docs/index.svelte src/routes/index.svelte
@@ -25,7 +25,7 @@ else
     exit 1
 fi
 
-DIR=/docs/static
+DIR=docs/static
 if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
     cp -r docs/static .
