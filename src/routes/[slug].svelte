@@ -14,7 +14,6 @@
     export let sections;
     export let tags; 
     import manifest from '../../static/manifest.json';
-    console.log(sections[1].html)
 </script>
 
 <svelte:head>

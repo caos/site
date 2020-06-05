@@ -1,3 +1,11 @@
+<script>
+    let tabs = [
+        {lang: 'yaml', content:"main: halllo"},
+        {lang: 'js', content:"console.log();"},
+        {lang: 'html', content:"<p>hello</p>"},
+    ]
+</script>
+
 <style>
 .pc-tab > input,
 .pc-tab section > div {
@@ -23,13 +31,6 @@
   box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
-  font-weight: 100;
-  font-size: 60px;
-  color: #e74c3c;
-}
-
 .pc-tab {
   width: 100%;
   max-width: 700px;
@@ -42,17 +43,23 @@ h1 {
 }
 .pc-tab ul li label {
   float: left;
-  padding: 15px 25px;
-  border: 1px solid #ddd;
+  padding: 10px 25px;
+  border: 1px solid #81868a;
   border-bottom: 0;
-  background: #eeeeee;
-  color: #444;
+  background: #212224;
+}
+.pc-tab ul li:first-child label {
+  border-top-left-radius: 8px;
+}
+
+.pc-tab ul li:last-child label {
+  border-top-right-radius: 8px;
 }
 .pc-tab ul li label:hover {
-  background: #dddddd;
+  background: #ffffff20;
 }
 .pc-tab ul li label:active {
-  background: #ffffff;
+  background: #ffffff30;
 }
 .pc-tab ul li:not(:last-child) label {
   border-right-width: 0;
@@ -63,24 +70,18 @@ h1 {
 .pc-tab section div {
   padding: 20px;
   width: 100%;
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid #81868a;
+  background: #1e1e1e;
   line-height: 1.5em;
   letter-spacing: 0.3px;
-  color: #444;
-}
-.pc-tab section div h2 {
-  margin: 0;
-  letter-spacing: 1px;
-  color: #34495e;
 }
 
 #tab1:checked ~ nav .tab1 label,
 #tab2:checked ~ nav .tab2 label,
 #tab3:checked ~ nav .tab3 label {
-  background: white;
-  color: #111;
+  background: #1e1e1e;
   position: relative;
+  color: white;
 }
 #tab1:checked ~ nav .tab1 label:after,
 #tab2:checked ~ nav .tab2 label:after,
@@ -90,7 +91,7 @@ h1 {
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #ffffff;
+  background: #1e1e1e;
   left: 0;
   bottom: -1px;
 }
@@ -98,35 +99,23 @@ h1 {
 </style>
 
 <div class="pc-tab">
-<input checked="checked" id="tab1" type="radio" name="pct" />
+<input checked id="tab1" type="radio" name="pct" />
 <input id="tab2" type="radio" name="pct" />
 <input id="tab3" type="radio" name="pct" />
   <nav>
     <ul>
-      <li class="tab1">
-        <label for="tab1">First Tab</label>
-      </li>
-      <li class="tab2">
-        <label for="tab2">Second Tab</label>
-      </li>
-      <li class="tab3">
-        <label for="tab3">Third Tab</label>
-      </li>
+        {#each tabs as { lang }, i}
+        <li class="tab{i+1}">
+            <label for="tab{i+1}">{lang}</label>
+        </li>
+        {/each}
     </ul>
   </nav>
   <section>
-    <div class="tab1">
-      <h2>First</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus atque labore numquam non. Hic, animi.</p>
-    </div>
-    <div class="tab2">
-      <h2>Second</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
-    </div>
-    <div class="tab3">
-      <h2>Third</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliquid.</p>
-    </div>
+   {#each tabs as { lang, content }, i}
+        <div class="tab{i+1}">
+            {content}
+        </div>
+    {/each}
   </section>
 </div>
