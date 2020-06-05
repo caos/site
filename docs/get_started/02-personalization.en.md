@@ -12,9 +12,10 @@ Of course every doc site should have its unique design. There are three aspects 
 
 #### Contextual elements
 
-The purpose of these `elements` is to define the naming and appearance of the application. All information needed can be extracted from the manifest.json and an asset folder.
+The purpose of these `elements` is to define the naming and appearance of the application. Most information needed can be extracted from the manifest.json and an asset folder.
 
-As for now, name of the application, color-scheme and favicons can be defined in a `manifest.json` file and any referenced items such as images or icons have to be provided thrugh an asset folder called `static` located at the root of `docs` folder. For more information see [General Structure](get_started#General_Structure).
+As for now, name of the application, default language, color-scheme and favicons can be defined in a `manifest.json` file and any referenced items such as images or icons have to be provided thrugh an asset folder called `static` located at the root of `docs` folder. 
+For more information see [General Structure](get_started#General_Structure).
 
 Take a look at this example
 
@@ -44,7 +45,31 @@ Take a look at this example
 #### Homepage
 
 The homepage can be set using a .svelte file, a superset of HTML which includes styles and scripts.
+To implement language specific content, get the language code from params.
+
+```js
+ export async function preload(page, session) {
+        const {params} = page;
+        const {lang} = params;
+        return {lang};
+ }
+```
+
+then you can use handlebar like syntax.
+
+```html
+{#if lang == 'en'}
+    <h2>This is the doc generator</h2>
+{:else if lang == 'de'}
+    <h2>Das ist unser doc generator</h2>
+{:else if lang == 'it'}
+    <h2>Questo è il nostro doc generator</h2>
+{:else}
+    <h2>This is the doc generator</h2>
+{/if}
+```
 
 #### Markdown styles
 
-These styles are a work in progress. Make sure to come back later.
+Idea is to be able to provide a dedicated `.css` file for markdown highlighting.
+These styles are a work in progress. 
