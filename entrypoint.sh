@@ -3,8 +3,9 @@
 set -e
 
 # lopp over docs folder
-cd docs/
 ls -la
+
+cd docs/
 t=""
 for dir in */
 do
