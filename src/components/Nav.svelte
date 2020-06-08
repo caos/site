@@ -6,7 +6,6 @@
 	export let page;
     export let logo;
     export let title;
-	export let home = 'Home';
 	export let home_title = 'Homepage';
 	const current = writable(null);
 	setContext('nav', current);
@@ -89,7 +88,12 @@
 	}
 	ul :global(li).active {
 		display: block;
-	}
+    }
+
+    ul :global(li).lang :global(a) {
+        font-size: 16px;
+    }
+    
 	ul {
         /* display: flex;
         align-items: center; */
@@ -126,8 +130,9 @@
         text-decoration: none;
 	}
 	ul.open :global(li) :global(a) {
-        padding: 1.5rem .5rem;
-		display: block;
+        display: block;
+        padding: .5rem .5rem;
+        height: 30px;
     }
     
 	.primary :global(svg) {
@@ -151,9 +156,9 @@
         display: block;
     }
     
-	/* ul :global(li).active :global(a) {
+	ul :global(li).active :global(a) {
 		color: rgb(187,89,131);
-	} */
+	}
 
 	.modal-background {
 		position: fixed;

@@ -30,8 +30,6 @@ export default function generate_docs(dirpath, dir, lang = 'en') {
         lang = 'en';
     }
 
-    console.log('lang:' + lang);
-
     return fs
         .readdirSync(`${dirpath}${dir}`)
         .filter((file) => {
@@ -71,7 +69,6 @@ export default function generate_docs(dirpath, dir, lang = 'en') {
                 let class_name = '';
 
                 if (meta) {
-                    console.log(meta);
                     source = lines.slice(1).join('\n');
                     const filename = meta.filename || (lang === 'html' && 'App.svelte');
                     if (filename) {
