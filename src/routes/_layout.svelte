@@ -24,11 +24,11 @@
     <NavItem external="it">IT</NavItem>
     <NavItem external="en">EN</NavItem> -->
 
-    <!-- <LangSwitch></LangSwitch> -->
+    <LangSwitch></LangSwitch>
 
-    <NavItem external="https://github.com/caos" title="GitHub Repo">
+    <!-- <NavItem external="https://github.com/caos" title="GitHub Repo">
         <Icon name="lab la-github" size="24px"></Icon>
-    </NavItem>
+    </NavItem> -->
 </Nav>
 
 <main>

@@ -106,9 +106,10 @@
 		top: 0;
 	}
 	ul.open {
-		padding: 0 0 1em 0;
-        background-color: #001F40;
-		align-self: start;
+		padding: 3rem 1rem;
+        background-color: #212224;
+        align-self: start;
+        border: 1px solid #ffffff;
 	}
 	ul.open :global(li) {
 		display: block;
@@ -119,13 +120,13 @@
 	}
 	ul :global(li) :global(a) {
         font-weight: 500;
-        padding: 1rem 1.5rem;
+        padding: 1rem .5rem;
 		border: none;
         color: inherit;
         text-decoration: none;
 	}
 	ul.open :global(li) :global(a) {
-        padding: 1.5rem 1.5rem;
+        padding: 1.5rem .5rem;
 		display: block;
     }
     
@@ -136,6 +137,14 @@
     
 	.home {
         width: 200px;
+        line-height: 22px;
+        font-size: 22px;
+    }
+
+    .home:hover {
+        color: inherit;
+        text-decoration:none;
+        border: none;
     }
 
     .home img {
@@ -152,20 +161,14 @@
 		height: 100%;
 		left: 0;
 		top: 0;
-		/* background-color: rgba(255, 255, 255, 0.9); */
-	}
+    }
+    
 	a {
 		color: inherit;
 		border-bottom: none;
-		transition: none;
+        transition: none;
     }
     
-    :global(i) {
-        color: rgb(187,89,131);
-    }
-	/* ul :global(li):not(.active) :global(a):hover {
-		color: var(--flash);
-	} */
 	@media (min-width: 840px) {
 		ul {
 			padding: 0;
@@ -235,7 +238,6 @@
 			on:mouseenter="{() => open = true}"
 			on:mouseleave="{() => open = false}"
 		>
-			<!-- <li class:active="{!segment}"><a rel="prefetch" href=".">{home}</a></li> -->
 			<slot></slot>
             <i class="hide-if-desktop las la-chevron-down" class:hide={open}></i>
 		</ul>
