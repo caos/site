@@ -15,4 +15,4 @@ Start the server with `npm run dev`, and navigate to [localhost:3000](http://loc
 
 ### Honorable Mentions
 
-This project was created with the help of some components from [svelte](https://github.com/sveltejs/svelte) as well as [site-kit](https://github.com/sveltejs/site-kit). 
+This project was created with the help of some components from [svelte](https://github.com/sveltejs/svelte)([MIT](https://github.com/sveltejs/svelte/blob/master/LICENSE)) as well as [site-kit](https://github.com/sveltejs/site-kit)([MIT](https://github.com/sveltejs/site-kit/blob/master/LICENSE)).
