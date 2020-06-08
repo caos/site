@@ -378,6 +378,7 @@ export let lang = manifest.lang;
   small a {
     all: unset;
   }
+
   small a:before {
     all: unset;
   }

@@ -401,6 +401,14 @@ th {
 	padding: 0.4rem 0.8rem 0.4rem 0;
 }
 
+td[align='right'] {
+    text-align: right;
+}
+
+th[align='right'] {
+    text-align: right;
+}
+
 table code,
 table span {
 	white-space: pre;
