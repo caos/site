@@ -4,6 +4,7 @@
   import Nav from "../components/Nav.svelte";
   import NavItem from "../components/NavItem.svelte";
   import manifest from '../../static/manifest.json';
+  import LangSwitch from '../components/LangSwitch.svelte';
 
   export let segment;
   const { page } = stores();
@@ -19,13 +20,15 @@
 </style>
 
 <Nav {segment} {page} title="{manifest.name}">
-  <NavItem external="de">DE</NavItem>
+    <!-- <NavItem external="de">DE</NavItem>
     <NavItem external="it">IT</NavItem>
-  <NavItem external="en">EN</NavItem>
+    <NavItem external="en">EN</NavItem> -->
 
-  <NavItem external="https://github.com/caos" title="GitHub Repo">
-    <Icon name="lab la-github" size="24px"></Icon>
-  </NavItem>
+    <!-- <LangSwitch></LangSwitch> -->
+
+    <NavItem external="https://github.com/caos" title="GitHub Repo">
+        <Icon name="lab la-github" size="24px"></Icon>
+    </NavItem>
 </Nav>
 
 <main>

@@ -4,9 +4,11 @@
 </script>
 
 <style>
+  :global(a),
   :global(i) {
       font-size: 20px;
+      height: 20px;
   }
 </style>
 
-<i class={name} style="font-size: {size}"><use xlink:href="#{name}" /></i>
+<i class={name} style="font-size: {size}; height: {size};"><use xlink:href="#{name}" /></i>
