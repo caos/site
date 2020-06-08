@@ -409,6 +409,14 @@ th[align='right'] {
     text-align: right;
 }
 
+td[align='left'] {
+    text-align: left;
+}
+
+th[align='left'] {
+    text-align: left;
+}
+
 table code,
 table span {
 	white-space: pre;
