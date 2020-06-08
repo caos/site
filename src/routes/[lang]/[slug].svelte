@@ -1,9 +1,7 @@
 <script context="module">
     export async function preload({params}) {
         const {lang, slug} = params;
-        console.log(params);
         const sections = await this.fetch(`${lang}/${slug}.json`).then(r => r.json());
-        // const { tags } = await import(`docs/${slug}/seo.json`);
         const tags = [];
         return { sections, slug, tags };
     }

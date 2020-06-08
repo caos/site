@@ -19,13 +19,13 @@
 </style>
 
 <Nav {segment} {page} title="{manifest.name}">
-  <NavItem external="de">DE</NavItem>
-    <NavItem external="it">IT</NavItem>
-  <NavItem external="en">EN</NavItem>
+    <NavItem lang="true" segment="de" >DE</NavItem>
+    <NavItem lang="true" segment="it">IT</NavItem>
+    <NavItem lang="true" segment="en">EN</NavItem>
 
-  <NavItem external="https://github.com/caos" title="GitHub Repo">
-    <Icon name="lab la-github" size="24px"></Icon>
-  </NavItem>
+    <NavItem external="https://github.com/caos" title="GitHub Repo">
+        <Icon name="lab la-github" size="24px"></Icon>
+    </NavItem>
 </Nav>
 
 <main>
