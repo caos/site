@@ -14,3 +14,4 @@ The SSG supports I18N. Currently we‘re testing the following languages:
 | English | en |
 | German | de |
 | Italian | it |
+| Danish | da |
