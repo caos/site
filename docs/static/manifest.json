@@ -5,7 +5,7 @@
 	"name": "Caos Docs",
 	"short_name": "Caos Docs",
 	"display": "minimal-ui",
-	"start_url": "/site",
+	"start_url": "/site/",
 	"icons": [
         {
           "src": "icons/android-chrome-256x256.png",
