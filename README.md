@@ -13,7 +13,6 @@ npm i
 
 Start the server with `npm run dev`, and navigate to [localhost:3000](http://localhost:3000).
 
-### Contributors
+### Honorable Mentions
 
-This project was created with the help of the contributors of [svelte](https://github.com/sveltejs/svelte) as well as [site-kit](https://github.com/sveltejs/site-kit). 
-Take a look at [these people](https://github.com/sveltejs/site-kit/graphs/contributors)
+This project was created with the help of some components from [svelte](https://github.com/sveltejs/svelte) as well as [site-kit](https://github.com/sveltejs/site-kit). 
