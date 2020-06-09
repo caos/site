@@ -3,7 +3,7 @@
 set -e
 
 # lopp over docs folder
-
+ls src/routes/[lang]
 cd docs/
 t=""
 for dir in */
@@ -19,7 +19,7 @@ cd ..
 HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
     echo "$HOMEPAGE exist, copy to routes"
-    cp docs/index.svelte src/routes/[lang]/index.svelte
+    cp -p docs/index.svelte src/routes/[lang]/index.svelte
 else
     echo "$HOMEPAGE doesn't exist"
     exit 1
@@ -28,15 +28,13 @@ fi
 DIR=docs/static
 if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
-    cp -r docs/static .
+    cp -pr docs/static .
 else
     echo "$DIR folder doesn't exist"
     exit 1
 fi
 
 npm i
-
-ls -la
 
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
