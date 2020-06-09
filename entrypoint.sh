@@ -3,7 +3,6 @@
 set -e
 
 # lopp over docs folder
-ls -la
 
 cd docs/
 t=""
@@ -34,6 +33,8 @@ else
     echo "$DIR folder doesn't exist"
     exit 1
 fi
+
+ls -la
 
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""

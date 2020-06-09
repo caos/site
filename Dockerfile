@@ -22,8 +22,10 @@ COPY /src /src
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
-RUN ls -la src
 RUN npm install
+
+RUN ls -la src
+RUN ls -la
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
