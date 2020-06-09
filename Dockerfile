@@ -10,7 +10,6 @@ LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
 # RUN npm install
-RUN ls -la
 
 COPY README.md /
 COPY package.json /
@@ -23,6 +22,7 @@ COPY /src /
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
+RUN ls -la src
 RUN npm install
 
 ENTRYPOINT ["/entrypoint.sh"]
