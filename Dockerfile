@@ -11,6 +11,8 @@ LABEL com.github.actions.color="gray-dark"
 
 WORKDIR /docbuild
 
+ls -la .
+
 COPY ./README.md .
 COPY ./package.json .
 COPY ./rollup.config.js .
@@ -22,9 +24,8 @@ COPY /src .
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
-RUN npm install
+RUN npm ci
 
-RUN ls -la src/routes
 RUN ls -la
 
 ENTRYPOINT ["/entrypoint.sh"]
