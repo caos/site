@@ -15,9 +15,9 @@ RUN ls -la
 COPY README.md /
 COPY package.json /
 COPY rollup.config.js /
-# COPY ./cypress.json ./cypress.json
+COPY cypress.json /
 COPY config.js /
-# COPY ./appveyor.yml ./appveyor.yml
+COPY appveyor.yml /
 COPY /static /
 COPY /src /
 
