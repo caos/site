@@ -12,14 +12,13 @@ LABEL com.github.actions.color="gray-dark"
 # RUN npm install
 
 COPY README.md /
-COPY ./package.json ./package.json
-COPY ./rollup.config.js ./rollup.config.js
-COPY ./rollup.config.js ./rollup.config.js
+COPY package.json /
+COPY rollup.config.js /
 # COPY ./cypress.json ./cypress.json
-COPY ./config.json ./config.json
+COPY config.json /
 # COPY ./appveyor.yml ./appveyor.yml
-COPY ./static ./static
-COPY ./src ./src
+COPY /static /
+COPY /src /
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
