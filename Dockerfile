@@ -24,7 +24,7 @@ COPY "entrypoint.sh" "/entrypoint.sh"
 
 RUN npm install
 
-RUN ls -la src
+RUN ls -la src/routes
 RUN ls -la
 
 ENTRYPOINT ["/entrypoint.sh"]
