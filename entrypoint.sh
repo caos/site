@@ -2,8 +2,7 @@
 
 set -e
 
-# lopp over docs folder
-ls src/routes/[lang]
+# loop over docs folder
 cd docs/
 t=""
 for dir in */
