@@ -9,22 +9,20 @@ LABEL com.github.actions.description="Generates a doc site out of md files"
 LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
-WORKDIR /docbuild
+# RUN npm install
 
-RUN ls -la .
-
-COPY ./README.md .
-COPY ./package.json .
-COPY ./rollup.config.js .
-COPY ./cypress.json .
-COPY ./config.js .
-COPY ./appveyor.yml .
-COPY /static .
-COPY /src .
+COPY README.md /
+COPY package.json /
+COPY rollup.config.js /
+COPY cypress.json /
+COPY config.js /
+COPY appveyor.yml /
+COPY /static /static
+COPY /src /src
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
-RUN npm ci
+RUN npm install
 
 RUN ls -la
 
