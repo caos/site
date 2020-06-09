@@ -17,8 +17,8 @@ COPY rollup.config.js /
 COPY cypress.json /
 COPY config.js /
 COPY appveyor.yml /
-COPY /static /
-COPY /src /
+COPY /static /static
+COPY /src /src
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
