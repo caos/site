@@ -402,19 +402,19 @@ th {
 }
 
 td[align='right'] {
-    text-align: right;
+    text-align: right !important;
 }
 
 th[align='right'] {
-    text-align: right;
+    text-align: right !important;
 }
 
 td[align='left'] {
-    text-align: left;
+    text-align: left !important;
 }
 
 th[align='left'] {
-    text-align: left;
+    text-align: left !important;
 }
 
 table code,

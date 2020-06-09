@@ -35,7 +35,5 @@ else
     exit 1
 fi
 
-# install dependencies
-npm install
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
