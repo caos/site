@@ -34,6 +34,8 @@ else
     exit 1
 fi
 
+npm i
+
 ls -la
 
 echo "npx sapper export --legacy $* --entry \"$t\""
