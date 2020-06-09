@@ -2,6 +2,8 @@
 
 set -e
 
+ls -la
+
 # loop over docs folder
 cd docs/
 t=""
@@ -33,7 +35,7 @@ else
     exit 1
 fi
 
-npm i
+# npm i
 
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
