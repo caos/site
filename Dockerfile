@@ -10,12 +10,13 @@ LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
 # RUN npm install
+RUN ls -la
 
 COPY README.md /
 COPY package.json /
 COPY rollup.config.js /
 # COPY ./cypress.json ./cypress.json
-COPY config.json /
+COPY config.js /
 # COPY ./appveyor.yml ./appveyor.yml
 COPY /static /
 COPY /src /
