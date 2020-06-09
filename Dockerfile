@@ -11,7 +11,7 @@ LABEL com.github.actions.color="gray-dark"
 
 WORKDIR /docbuild
 
-ls -la .
+RUN ls -la .
 
 COPY ./README.md .
 COPY ./package.json .
