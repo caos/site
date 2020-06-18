@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
     - name: Build Docs
-      uses: caos/site@master
+      uses: caos/site@docker
       with:
         args: --basepath ${{ github.event.repository.name }}
     - name: Archive Production Artifact
