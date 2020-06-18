@@ -15,7 +15,7 @@ jobs:
     - name: Build Docs
       uses: caos/site@docker
       with:
-        args: --basepath ${{ github.event.repository.name }}
+        args: sapper export --legacy --basepath ${{ github.event.repository.name }} --entry "static get_started"
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
