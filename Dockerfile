@@ -16,10 +16,9 @@ COPY rollup.config.js /app
 COPY cypress.json /app
 COPY config.js /app
 COPY appveyor.yml /app
-
-COPY "entrypoint.sh" "/entrypoint.sh"
+COPY entrypoint.sh /app
 
 RUN ls -la
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
