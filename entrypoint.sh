@@ -35,7 +35,5 @@ else
     exit 1
 fi
 
-# npm i
-
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
