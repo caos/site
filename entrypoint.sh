@@ -2,7 +2,10 @@
 
 set -e
 
-ls -la
+echo "run npm install"
+sh -c "npm install"
+
+ls -la node_modules
 
 # loop over docs folder
 cd docs/
@@ -34,9 +37,6 @@ else
     echo "$DIR folder doesn't exist"
     exit 1
 fi
-
-echo "run npm install"
-sh -c "npm install"
 
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
