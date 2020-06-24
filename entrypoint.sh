@@ -36,5 +36,6 @@ else
     exit 1
 fi
 
-echo "npx sapper export --legacy $*"
-sh -c "npx sapper export --legacy --basepath site --entry static"
+echo "npx sapper export --legacy $1"
+#sh -c "npx sapper export --legacy --basepath $1 --entry $2"
+sh -c "npx sapper export --legacy --basepath site --entry static get_started"
