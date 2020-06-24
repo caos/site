@@ -1,13 +1,4 @@
-FROM node:10-alpine 
-
-LABEL version="1.0.0"
-LABEL repository="https://github.com/caos/site"
-LABEL homepage="https://github.com/caos"
-
-LABEL com.github.actions.name="Github Action Site Generator"
-LABEL com.github.actions.description="Generates a doc site out of md files"
-LABEL com.github.actions.icon="package"
-LABEL com.github.actions.color="gray-dark"
+FROM node:10-alpine
 
 WORKDIR /app
 
@@ -20,8 +11,6 @@ COPY entrypoint.sh /app
 COPY static /app
 COPY src /app
 COPY cypress /app
-
-RUN ls -la
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
