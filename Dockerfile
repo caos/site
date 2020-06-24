@@ -19,5 +19,5 @@ COPY entrypoint.sh /app
 
 RUN ls -la
 
-ENTRYPOINT ["/aap/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
