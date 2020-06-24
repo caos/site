@@ -2,6 +2,8 @@
 
 set -e
 
+args=$@
+
 echo "run npm install"
 sh -c "npm install"
 
@@ -36,5 +38,5 @@ else
     exit 1
 fi
 
-echo "run npx export with basepath $1 and entry $2"
-npx sapper export $@
+echo "run npx export with $args"
+npx sapper export $args
