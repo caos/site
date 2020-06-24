@@ -11,13 +11,13 @@ LABEL com.github.actions.color="gray-dark"
 
 WORKDIR /app
 COPY package.json /app
-RUN npm install
 COPY rollup.config.js /app
 COPY cypress.json /app
 COPY config.js /app
 COPY appveyor.yml /app
+COPY entrypoint.sh /app
 
 RUN ls -la
 
-ENTRYPOINT ["npx"]
+ENTRYPOINT ["/aap/entrypoint.sh"]
 CMD ["--help"]
