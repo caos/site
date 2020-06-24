@@ -35,7 +35,8 @@ else
     exit 1
 fi
 
-npm install
+echo "run npm install"
+sh -c "npm install"
 
 echo "npx sapper export --legacy $* --entry \"$t\""
 sh -c "npx sapper export --legacy $* --entry \"$t\""
