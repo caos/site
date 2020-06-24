@@ -40,6 +40,6 @@ echo "npx sapper export --legacy $*"
 sh -c "npx sapper export --legacy --basepath site --entry static get_started"
 
 echo "ls export"
-ls -la __sapper__
+ls -la __sapper__/build
 
 
