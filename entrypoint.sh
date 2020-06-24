@@ -37,4 +37,4 @@ else
 fi
 
 echo "npx sapper export --legacy $*"
-sh -c "npx sapper export --legacy --basepath site --entry static get_started"
+sh -c "npx sapper export --legacy --basepath site --entry static"
