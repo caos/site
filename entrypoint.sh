@@ -5,6 +5,7 @@ set -e
 echo "run npm install"
 sh -c "npm install"
 
+echo "ls -la"
 ls -la node_modules
 
 # loop over docs folder
