@@ -14,4 +14,3 @@ COPY cypress/ /app/cypress/
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
-
