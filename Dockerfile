@@ -8,9 +8,9 @@ COPY cypress.json /app
 COPY config.js /app
 COPY appveyor.yml /app
 COPY entrypoint.sh /app
-COPY static /app
-COPY src /app
-COPY cypress /app
+COPY static/ /app/static/
+COPY src/ /app/src/
+COPY cypress/ /app/cypress/
 
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
