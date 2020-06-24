@@ -16,12 +16,13 @@ jobs:
       uses: caos/site@docker
       # with:
       #   args: sapper export --legacy --basepath ${{ github.event.repository.name }} --entry "static get_started"
+    - run: npx sapper export --legacy --basepath site --entry static get_started
     - run: ls __sapper__
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: export
-        path: __sapper__/build
+        path: __sapper__/export
   deploydocs:
     name: Deploy
     needs: builddocs
