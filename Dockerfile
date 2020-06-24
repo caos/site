@@ -11,7 +11,7 @@ LABEL com.github.actions.color="gray-dark"
 
 WORKDIR /app
 COPY package.json /app
-RUN npm install
+RUN npm install -g
 COPY rollup.config.js /app
 COPY cypress.json /app
 COPY config.js /app
