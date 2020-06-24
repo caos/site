@@ -9,17 +9,19 @@ LABEL com.github.actions.description="Generates a doc site out of md files"
 LABEL com.github.actions.icon="package"
 LABEL com.github.actions.color="gray-dark"
 
-COPY package.json /
-COPY rollup.config.js /
-COPY cypress.json /
-COPY config.js /
-COPY appveyor.yml /
-COPY entrypoint.sh /
-COPY static /
-COPY src /
-COPY cypress /
+WORKDIR /app
+
+COPY package.json /app
+COPY rollup.config.js /app
+COPY cypress.json /app
+COPY config.js /app
+COPY appveyor.yml /app
+COPY entrypoint.sh /app
+COPY static /app
+COPY src /app
+COPY cypress /app
 
 RUN ls -la
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
