@@ -38,4 +38,4 @@ fi
 
 echo "npx sapper export --legacy $1"
 #sh -c "npx sapper export --legacy --basepath $1 --entry $2"
-sh -c "npx sapper export --legacy --basepath site --entry static get_started"
+npx sapper export --legacy --basepath site --entry "static get_started"
