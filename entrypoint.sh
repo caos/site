@@ -39,4 +39,4 @@ else
 fi
 
 echo "run npx export with $args"
-npx sapper export $args
+npx sapper export "$args"
