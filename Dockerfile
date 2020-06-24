@@ -15,6 +15,9 @@ COPY cypress.json /
 COPY config.js /
 COPY appveyor.yml /
 COPY entrypoint.sh /
+COPY static /
+COPY src /
+COPY cypress /
 
 RUN ls -la
 
