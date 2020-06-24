@@ -5,12 +5,6 @@ set -e
 echo "run npm install"
 sh -c "npm install"
 
-echo "ls -la node_modules"
-ls -la node_modules
-
-echo "ls -la src"
-ls -la src
-
 # loop over docs folder
 cd docs/
 t=""
@@ -42,7 +36,8 @@ else
     exit 1
 fi
 
-npx sapper export 
-
 echo "npx sapper export --legacy $*"
 sh -c "npx sapper export --legacy --basepath site --entry static get_started"
+
+echo "ls export"
+ls -la __sapper__/export
