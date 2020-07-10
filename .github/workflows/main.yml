@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@master
+    - run: ls -la
     - name: Build Docs
       uses: caos/site@master
       with:
