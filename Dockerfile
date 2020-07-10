@@ -16,5 +16,5 @@ RUN npm install
 RUN echo dockerlog && ls -la
 RUN chmod 777 node_modules
 
-ENTRYPOINT ["app","entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["--help"]
