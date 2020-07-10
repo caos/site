@@ -2,7 +2,10 @@
 
 set -e
 
-ls -la
+args=$@
+
+echo "run npm install"
+sh -c "npm install"
 
 # loop over docs folder
 cd docs/
@@ -35,7 +38,5 @@ else
     exit 1
 fi
 
-# npm i
-
-echo "npx sapper export --legacy $* --entry \"$t\""
-sh -c "npx sapper export --legacy $* --entry \"$t\""
+echo "run npx export with $args"
+sh -c "npx sapper export --legacy $args"

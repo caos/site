@@ -13,9 +13,10 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
     - name: Build Docs
-      uses: caos/site@master
+      uses: caos/site@treeshake
       with:
         args: --basepath ${{ github.event.repository.name }}
+    - run: ls __sapper__
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
