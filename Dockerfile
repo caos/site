@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-# WORKDIR /app
+WORKDIR /app
 
 COPY package.json /app
 COPY rollup.config.js /app
