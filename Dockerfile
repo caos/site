@@ -15,5 +15,5 @@ COPY cypress/ /app/cypress/
 RUN npm install
 RUN echo dockerlog && ls -la
 
-# ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["npx sapper export","--legacy"]
+ENTRYPOINT ["/app/entrypoint.sh"]
+# CMD ["npx sapper export","--legacy"]
