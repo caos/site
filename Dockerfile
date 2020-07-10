@@ -17,5 +17,5 @@ RUN echo dockerlog && ls -la
 RUN chmod 777 node_modules
 RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
