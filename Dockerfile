@@ -16,4 +16,4 @@ RUN npm install
 RUN echo dockerlog && ls -la
 
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["--help"]
+# CMD ["--help"]
