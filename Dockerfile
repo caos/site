@@ -12,5 +12,8 @@ COPY static/ /app/static/
 COPY src/ /app/src/
 COPY cypress/ /app/cypress/
 
+RUN npm install
+RUN echo dockerlog && ls -la
+
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
