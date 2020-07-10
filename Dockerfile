@@ -1,21 +1,19 @@
 FROM node:10-alpine
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY package.json .
-COPY rollup.config.js .
-COPY cypress.json .
-COPY config.js .
-COPY appveyor.yml .
-COPY entrypoint.sh .
-COPY static/ /static/
-COPY src/ /src/
-COPY cypress/ /cypress/
+COPY package.json /app
+COPY rollup.config.js /app
+COPY cypress.json /app
+COPY config.js /app
+COPY appveyor.yml /app
+COPY entrypoint.sh /app
+COPY static/ /app/static/
+COPY src/ /app/src/
+COPY cypress/ /app/cypress/
 
 RUN npm install
 RUN echo dockerlog && ls -la
-RUN chmod 777 node_modules
-RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["--help"]
