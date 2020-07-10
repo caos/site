@@ -4,6 +4,9 @@ set -e
 
 args=$@
 
+echo "entrypoint log"
+ls -la
+
 echo "run npm install"
 sh -c "npm install"
 
