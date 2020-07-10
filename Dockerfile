@@ -16,4 +16,4 @@ RUN npm install
 RUN echo dockerlog && ls -la
 
 # ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["npx sapper export","--legacy","--basepath site"]
+CMD ["npx sapper export","--legacy"]
