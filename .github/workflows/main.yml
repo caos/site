@@ -13,15 +13,15 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
     - name: Build Docs
-      uses: caos/site@docker
+      uses: caos/site@treeshake
       with:
-        args:  --legacy --basepath ${{ github.event.repository.name }} --entry static get_started
+        args:  --legacy --basepath ${{ github.event.repository.name }}
     - run: ls __sapper__
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: export
-        path: __sapper__/export
+        path: __sapper__/export/${{ github.event.repository.name }}
   deploydocs:
     name: Deploy
     needs: builddocs
