@@ -14,6 +14,7 @@ COPY cypress/ /cypress/
 
 RUN npm install
 RUN echo dockerlog && ls -la
+RUN chmod 777 /node_modules
 
-ENTRYPOINT ["app","/entrypoint.sh"]
+ENTRYPOINT ["app","entrypoint.sh"]
 CMD ["--help"]
