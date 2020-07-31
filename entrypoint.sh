@@ -7,6 +7,13 @@ args=$@
 echo "entrypoint log"
 ls -la
 
+pwd
+
+if [ -d "/github/workspace" ]; then
+  echo "Installing docs from github"
+  cp -r /github/workspace .
+fi
+
 echo "run npm install"
 sh -c "npm install"
 
