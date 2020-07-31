@@ -9,9 +9,6 @@ ls -la
 
 pwd
 
-echo "run npm install"
-sh -c "npm install"
-
 # loop over docs folder
 cd docs/
 t=""
