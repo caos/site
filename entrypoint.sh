@@ -48,8 +48,5 @@ cd /app
 echo "run npx export with $args"
 sh -c "npx sapper export --legacy $args"
 
-echo "looking for export files"
-ls -l /app/__sapper__ 
-ls -l /app/__sapper__/export
-
-cp -rp /app/__sapper__ .
+echo "copy export files"
+cp -rp /app/__sapper__ /github/workspace
