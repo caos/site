@@ -9,11 +9,6 @@ ls -la
 
 pwd
 
-#if [ -d "/github/workspace" ]; then
-#  echo "Installing docs from github"
-#  cp -r /github/workspace .
-#fi
-
 echo "run npm install"
 sh -c "npm install"
 
@@ -48,10 +43,13 @@ else
     exit 1
 fi
 
-ls -l /app
-ls -l /app/src/routes
-
 cd /app
 
 echo "run npx export with $args"
 sh -c "npx sapper export --legacy $args"
+
+echo "looking for export files"
+ls -l /app/__sapper__ 
+ls -l /app/__sapper__/export
+
+cp -rp /app/__sapper__ .
