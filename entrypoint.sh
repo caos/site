@@ -42,11 +42,14 @@ fi
 DIR=docs/static
 if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
-    cp -pr docs/static .
+    cp -pr docs/static /app/
 else
     echo "$DIR folder doesn't exist"
     exit 1
 fi
+
+ls -l /app
+ls -l /app/src/routes
 
 echo "run npx export with $args"
 sh -c "npx sapper export --legacy $args"
