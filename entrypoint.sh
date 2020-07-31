@@ -51,5 +51,7 @@ fi
 ls -l /app
 ls -l /app/src/routes
 
+cd /app
+
 echo "run npx export with $args"
 sh -c "npx sapper export --legacy $args"
