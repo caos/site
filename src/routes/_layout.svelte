@@ -15,13 +15,14 @@
     margin: 0 auto;
     padding: var(--nav-h) 0 0 0;
     overflow-x: hidden;
+    background-color: var(--back);
   }
 </style>
 
 <Nav {segment} {page} title="{manifest.name}">
-    <NavItem lang="true" segment="de" >DE</NavItem>
+    <!-- <NavItem lang="true" segment="de" >DE</NavItem>
     <NavItem lang="true" segment="it">IT</NavItem>
-    <NavItem lang="true" segment="en">EN</NavItem>
+    <NavItem lang="true" segment="en">EN</NavItem> -->
 
     <NavItem external="https://github.com/caos" title="GitHub Repo">
         <Icon name="lab la-github" size="24px"></Icon>
