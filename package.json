@@ -16,7 +16,7 @@
 		"@sindresorhus/slugify": "^1.1.0",
 		"compression": "^1.7.4",
 		"golden-fleece": "^1.0.9",
-		"highlight.js": "^9.18.1",
+		"highlight.js": "^10.1.2",
 		"marked": "^1.1.1",
 		"polka": "^0.5.2",
 		"sirv": "^0.4.2"
