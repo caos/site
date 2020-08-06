@@ -2,13 +2,13 @@
     import { goto } from '@sapper/app';
 
     let group= 'en';
-    $: setLocale(group);
+    // $: setLocale(group);
 
-    function setLocale(language) {
-        if (typeof window !== 'undefined') {
-            goto('/'+language);
-        }
-    }
+    // function setLocale(language) {
+    //     if (typeof window !== 'undefined') {
+    //         goto(window.location.href+'/'+language);
+    //     }
+    // }
 </script>
 
 <style>
