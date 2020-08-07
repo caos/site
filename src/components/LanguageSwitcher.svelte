@@ -1,10 +1,21 @@
 <script>
-    import { locale } from 'svelte-i18n';
-    import {setCookie} from '../modules/cookie.js';
-    let group= $locale;
-    $: setLocale(group);
+    import { setCookie } from '../modules/cookie.js';
+    import { docLanguages } from '../modules/language-store.js'
 
+    
+    let langs = [];
+    const unsubscribe = docLanguages.subscribe(value => {
+        console.log('switcher: ',value)
+		langs = value;
+    });
+    // unsubscribe();
+
+    import { locale } from 'svelte-i18n';
+    let group= $locale;
+
+    $:setLocale(group);
     function setLocale(language) {
+        console.log('setlocale', language)
         if (typeof window !== 'undefined') {
             setCookie('locale', language);
         }
@@ -22,14 +33,6 @@
         display: flex;
         align-items: center;
         position: relative;
-        width: calc(var(--height) * 2);
-        height:  var(--height);
-
-        -webkit-transition: transform 0.17s var(--speed3);
-        -moz-transition: transform 0.17s var(--speed3);
-        -ms-transition: transform 0.17s var(--speed3);
-        -o-transition: transform 0.17s var(--speed3);
-        transition: transform 0.17s var(--speed3);
     }
     
     .language-switcher input {
@@ -37,74 +40,31 @@
         display: none;
     }
 
-    .language-switcher .select-de,
-    .language-switcher .select-en {
-        position: absolute;
-        font-size: calc(var(--height) / 2.5);
-        top: 50%;
-        transform: translateY(-50%);
-        color: #fff;
-        mix-blend-mode: difference;    
-    }
-
-    .language-switcher .select-de {
-        z-index: 10;
-        left: 6px;
-    }
-        
-    .language-switcher .select-en {
-        z-index: 10;
-        right: calc(var(--height) / 4);
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        box-shadow: 0 3px 64px rgba(var(--deep-blue), .1);
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
+    .language-switcher .select {
         height: var(--height);
         width: var(--height);
-        left: 0;
-        bottom: 0;
+        border-radius: 50vw;
+        font-size: calc(var(--height) / 2.5);
+        color: #fff;
+        mix-blend-mode: difference;    
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        justify-content: center;
+    }
+
+    .language-switcher .current {
         background-color: white;
-        box-shadow: 0 3px 64px rgba(var(--deep-blue), .16);
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-    }
-
-    .right {
-        -webkit-transform: translateX(var(--height));
-        -ms-transform: translateX(var(--height));
-        transform: translateX(var(--height));
-    }
-
-    .slider.round {
-        border-radius: var(--height);
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
+        color: black;
     }
 </style>
 
 <div class="language-switcher">
-    <span class="slider round {group=='en' ? 'right' : 'left'}"></span>
-    <label class="select-de">
-        <input type=radio bind:group value="de">
-        DE
-    </label>
-    <label class="select-en">
-        <input type=radio bind:group value="en">
-        EN
-    </label>
+	{#each $docLanguages as lang}
+		<label class="select {lang == group ? 'current' : 'notcurrent'}">
+            <input type=radio bind:group value={lang}>
+            {lang.toUpperCase()}
+        </label>
+	{/each}
 </div>
+<!-- <span>{$docLanguages} {group}</span> -->
