@@ -1,7 +1,6 @@
 <script context="module">
     export async function preload(page, session) {
         const {params} = page;
-        const {lang} = params;
         let workflow = '';
         try {
             workflow = `name: Docs
@@ -53,16 +52,15 @@ jobs:
             console.error(err);
             workflow = '';
         }
-        return {workflow, lang};
+        return {workflow};
     }
 </script>
 
 <script>
     import Split from "../components/Split.svelte";
     import Section from '../components/Section.svelte';
-    // import CodeTable from '../components/CodeTable.svelte';
     export let workflow;
-    export let lang;
+    import { _ } from 'svelte-i18n';
 </script>
 
 <style>
@@ -92,23 +90,15 @@ jobs:
 </Section>
 <Section>
 <img class="logo" src="icons/android-chrome-256x256.png" alt="logo">
-{#if lang == 'en'}
-    <h2>This is the doc generator</h2>
-{:else if lang == 'de'}
-    <h2>Das ist unser doc generator</h2>
-{:else if lang == 'it'}
-    <h2>Questo è il nostro doc generator</h2>
-{:else}
-    <h2>This is the doc generator</h2>
-{/if}
-    <p>Please take a look at the demo <a href="/get_started" >here</a></p>
+    <h2>{$_('title')}</h2>
+    <p>{$_('description')}<a href="/get_started" >{$_('description_link')}</a></p>
 <Split>
     <div class="description" slot="what">
         <p>
-       To integrate this generator to your repository, add this build to your workflow!
+       {$_('instruction_header_0')}
         </p>
 
-        <p>To learn more about conventions used, <a href="/get_started">take a look here</a></p>
+        <p>{$_('instruction_header_1')}</p>
     </div>
 
     <div

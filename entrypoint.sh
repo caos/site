@@ -32,6 +32,15 @@ else
     exit 1
 fi
 
+DIR=docs/messages
+if [ -d "$DIR" ]; then
+    echo "$DIR exist, copy to root"
+    cp -pr $DIR /app/
+else
+    echo "$DIR folder doesn't exist"
+    exit 1
+fi
+
 # copy static and manifest
 HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
