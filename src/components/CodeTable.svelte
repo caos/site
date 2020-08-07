@@ -44,7 +44,7 @@
 .pc-tab ul li label {
   float: left;
   padding: 10px 25px;
-  border: 1px solid #81868a;
+  border: 1px solid #8795a1;
   border-bottom: 0;
   background: #212224;
 }
@@ -70,7 +70,7 @@
 .pc-tab section div {
   padding: 20px;
   width: 100%;
-  border: 1px solid #81868a;
+  border: 1px solid #8795a1;
   background: #1e1e1e;
   line-height: 1.5em;
   letter-spacing: 0.3px;

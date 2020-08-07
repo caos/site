@@ -21,6 +21,8 @@ t=${t%?}
 echo "$t"
 cd ..
 
+echo "{ "environment": { "BASEPATH": "$args[1]" } }"
+
 # copy static and manifest
 HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then

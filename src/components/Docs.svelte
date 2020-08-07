@@ -78,7 +78,7 @@ export let lang = manifest.lang;
     height: 2em;
     border-radius: .5rem;
     overflow: hidden;
-    border: 1px solid #81868a;
+    border: 1px solid #8795a1;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
     transition: width 0.2s, height 0.2s;
   }
@@ -245,7 +245,7 @@ export let lang = manifest.lang;
   }
 
   .content :global(.anchor) :global(i) {
-    color: #81868a;
+    color: #8795a1;
     font-size: 24px;
   }
 
