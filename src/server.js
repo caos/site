@@ -3,17 +3,15 @@ import compression from 'compression';
 import polka from 'polka';
 import sirv from 'sirv';
 
-import { environment } from '../environment.json';
+import { BASEPATH } from '../config.js';
 import { i18nMiddleware } from './i18n.js';
 
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === 'development';
 
-console.log(environment);
-
 polka()
     .use(
-        // environment.basepath,
+        BASEPATH,
         compression({ threshold: 0 }),
         sirv('static', { dev }),
         i18nMiddleware(),

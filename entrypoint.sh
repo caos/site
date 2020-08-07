@@ -21,13 +21,22 @@ t=${t%?}
 echo "$t"
 cd ..
 
-echo "{ "environment": { "BASEPATH": "$args[1]" } }"
+
+# copy config
+CONFIG=docs/config.js
+if [ -f "$CONFIG" ]; then
+    echo "$CONFIG exist, copy to routes"
+    cp -p $CONFIG /app/config.js
+else
+    echo "$CONFIG doesn't exist"
+    exit 1
+fi
 
 # copy static and manifest
 HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
     echo "$HOMEPAGE exist, copy to routes"
-    cp -p docs/index.svelte /app/src/routes/[lang]/index.svelte
+    cp -p $HOMEPAGE /app/src/routes/[lang]/index.svelte
 else
     echo "$HOMEPAGE doesn't exist"
     exit 1
@@ -36,7 +45,7 @@ fi
 DIR=docs/static
 if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
-    cp -pr docs/static /app/
+    cp -pr $DIR /app/
 else
     echo "$DIR folder doesn't exist"
     exit 1
