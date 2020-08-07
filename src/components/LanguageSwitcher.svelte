@@ -1,21 +1,15 @@
-<script>
+<script context="module">
     import { setCookie } from '../modules/cookie.js';
     import { docLanguages } from '../modules/language-store.js'
+    import {LANGUAGES} from '../../config.js';
+</script>
 
-    
-    let langs = [];
-    const unsubscribe = docLanguages.subscribe(value => {
-        console.log('switcher: ',value)
-		langs = value;
-    });
-    // unsubscribe();
-
-    import { locale } from 'svelte-i18n';
+<script>
+ import { locale } from 'svelte-i18n';
     let group= $locale;
 
     $:setLocale(group);
     function setLocale(language) {
-        console.log('setlocale', language)
         if (typeof window !== 'undefined') {
             setCookie('locale', language);
         }
@@ -60,11 +54,10 @@
 </style>
 
 <div class="language-switcher">
-	{#each $docLanguages as lang}
+	{#each LANGUAGES as lang}
 		<label class="select {lang == group ? 'current' : 'notcurrent'}">
             <input type=radio bind:group value={lang}>
             {lang.toUpperCase()}
         </label>
 	{/each}
 </div>
-<!-- <span>{$docLanguages} {group}</span> -->

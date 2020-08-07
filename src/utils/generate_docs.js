@@ -4,7 +4,6 @@ import marked from 'marked';
 import path from 'path';
 
 import { SLUG_PRESERVE_UNICODE, SLUG_SEPARATOR } from '../../config';
-import { docLanguages } from '../modules/language-store.js';
 import { extract_frontmatter, extract_metadata, langs, link_renderer } from './markdown.js';
 import { make_session_slug_processor } from './slug';
 
@@ -28,22 +27,6 @@ export default function generate_docs(dirpath, dir, lang) {
     });
 
     console.log('using language: ' + lang);
-
-    const detectedLocales = fs.readdirSync(`${dirpath}${dir}`)
-        .filter(file => path.extname(file) == '.md')
-        .map((file) => {
-            file = file.replace(path.extname(file), '');
-            const arr = file.split('.');
-            const locale = arr.length ? arr[arr.length - 1] : null;
-            if (locale) {
-                return locale;
-            }
-        }).filter(locale => locale !== null);
-
-    const redDetectedLocales = [...new Set(detectedLocales)];
-
-    console.log('detected locales: ' + redDetectedLocales);
-    docLanguages.set(redDetectedLocales);
 
     return fs
         .readdirSync(`${dirpath}${dir}`)
