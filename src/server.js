@@ -13,7 +13,7 @@ console.log(environment);
 
 polka()
     .use(
-        environment.basepath,
+        // environment.basepath,
         compression({ threshold: 0 }),
         sirv('static', { dev }),
         i18nMiddleware(),

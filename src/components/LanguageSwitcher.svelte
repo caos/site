@@ -1,14 +1,14 @@
 <script>
-    import { goto } from '@sapper/app';
+    import { locale } from 'svelte-i18n';
+    import {setCookie} from '../modules/cookie.js';
+    let group= $locale;
+    $: setLocale(group);
 
-    let group= 'en';
-    // $: setLocale(group);
-
-    // function setLocale(language) {
-    //     if (typeof window !== 'undefined') {
-    //         goto(window.location.href+'/'+language);
-    //     }
-    // }
+    function setLocale(language) {
+        if (typeof window !== 'undefined') {
+            setCookie('locale', language);
+        }
+    }
 </script>
 
 <style>
