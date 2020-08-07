@@ -16,6 +16,8 @@ jobs:
       run: ls -la
     - name: Build Docs
       uses: caos/site@master
+      # with:
+      #   args: --basepath ${{ github.event.repository.name }}
     - run: ls __sapper__
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
@@ -35,6 +37,7 @@ jobs:
         with:
           name: export
           path: __sapper__/export
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
