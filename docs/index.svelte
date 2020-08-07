@@ -58,8 +58,8 @@ jobs:
 </script>
 
 <script>
-    import Split from "../../components/Split.svelte";
-    import Section from '../../components/Section.svelte';
+    import Split from "../components/Split.svelte";
+    import Section from '../components/Section.svelte';
     // import CodeTable from '../components/CodeTable.svelte';
     export let workflow;
     export let lang;
@@ -101,14 +101,14 @@ jobs:
 {:else}
     <h2>This is the doc generator</h2>
 {/if}
-    <p>Please take a look at the demo <a href="{lang}/get_started" >here</a></p>
+    <p>Please take a look at the demo <a href="/get_started" >here</a></p>
 <Split>
     <div class="description" slot="what">
         <p>
        To integrate this generator to your repository, add this build to your workflow!
         </p>
 
-        <p>To learn more about conventions used, <a href="{lang}/get_started">take a look here</a></p>
+        <p>To learn more about conventions used, <a href="/get_started">take a look here</a></p>
     </div>
 
     <div
