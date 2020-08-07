@@ -36,7 +36,7 @@ fi
 HOMEPAGE=docs/index.svelte
 if [ -f "$HOMEPAGE" ]; then
     echo "$HOMEPAGE exist, copy to routes"
-    cp -p $HOMEPAGE /app/src/routes/[lang]/index.svelte
+    cp -p $HOMEPAGE /app/src/routes/index.svelte
 else
     echo "$HOMEPAGE doesn't exist"
     exit 1
