@@ -35,7 +35,7 @@
 	--back-light: transparent;
 	--back-api: #2d2e30;
 	--prime: #f81f6b;
-    --second: rgb(239,139,60);
+    --second: orange;
     --flash: #f54381;
 
     --nav-back: #212224;
@@ -47,8 +47,8 @@
 
 	--heading: #e8eaed;
     --text: #eff8ff;
-    --dark-text: #8a868a;
-	--sidebar-text: rgba(255, 255, 255, .75);
+    --dark-text: #8795a1;
+	--sidebar-text: #8795a1;
 	--border-w: .3rem; /* border-width  */
 	--border-r: .4rem; /* border-radius */
 }
@@ -67,27 +67,11 @@
 }
 
 body {
-	--font: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
-	--font-mono: 'Rubik', 'Fira Mono', monospace;
+	--font: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-mono: 'Lato', 'Fira Mono', monospace;
 }
 
 /*	fonts ---------------------------------- */
-
-@font-face {
-	font-family: 'Rubik';
-	font-style: normal;
-	font-weight: 300;
-	src: local('Rubik Regular'), local('Rubik-Regular'),
-		url('/fonts/rubik/Rubik-Regular.ttf') format('ttf');
-}
-
-@font-face {
-	font-family: 'Rubik';
-	font-style: normal;
-	font-weight: 600;
-	src: local('Rubik Bold'), local('Rubik-Bold'),
-		url('/fonts/rubik/Rubik-Bold.ttf') format('ttf');
-}
 
 @font-face {
 	font-family: 'ailerons';
@@ -100,14 +84,14 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	box-sizing: border-box;
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 html,
 body,
 #sapper {
 	width: 100%;
-	height: 100%;
+    height: 100%;
 }
 
 * {
@@ -142,7 +126,6 @@ body {
 	font: 300 var(--h4)/var(--lh) var(--font);
 	background-color: var(--back);
 	color: var(--text);
-
 	/* default spacing of Overpass is a bit too airy */
 	/* letter-spacing: -.013em; */
 }

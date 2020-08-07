@@ -1,4 +1,5 @@
 <script>
+    import LanguageSwitcher from './LanguageSwitcher.svelte'
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import Icon from './Icon.svelte';
@@ -56,7 +57,6 @@
 		transform: translate(0,calc(-100% - 1rem));
         transition: transform 0.2s;
         backdrop-filter: saturate(100%) blur(10px);
-        background-color: #21222430;
 	}
 	header.visible {
 		transform: none;
@@ -71,12 +71,16 @@
 		padding: 0 3rem 0 3rem;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
 		background-color: transparent;
 		transform: none;
 		transition: none;
 		box-shadow: none;
-	}
+    }
+    
+    .fill-space {
+        flex: 1;
+    }
+
 	.primary {
 		list-style: none;
 		margin: 0;
@@ -212,6 +216,10 @@
     .hide {
         display: none;
     }
+
+    .switcher-wrapper {
+        padding: 0 1rem;
+    }
 </style>
 
 <svelte:window on:hashchange={handle_hashchange} on:scroll={handle_scroll} />
@@ -236,7 +244,13 @@
 			<div class="modal-background hide-if-desktop" on:click="{() => open = false}"></div>
 		{/if}
 
-		<ul
+        <span class="fill-space"></span>
+
+        <div class="switcher-wrapper">
+            <LanguageSwitcher></LanguageSwitcher>
+        </div>
+
+        <ul
 			class="primary"
 			class:open
 			on:touchstart|capture={intercept_touchstart}

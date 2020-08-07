@@ -19,10 +19,6 @@
 </style>
 
 <Nav {segment} {page} title="{manifest.name}">
-    <NavItem lang="true" segment="de" >DE</NavItem>
-    <NavItem lang="true" segment="it">IT</NavItem>
-    <NavItem lang="true" segment="en">EN</NavItem>
-
     <NavItem external="https://github.com/caos" title="GitHub Repo">
         <Icon name="lab la-github" size="24px"></Icon>
     </NavItem>

@@ -20,15 +20,13 @@ const block_types = [
     'tablecell'
 ];
 
-export default function generate_docs(dirpath, dir, lang = 'en') {
+export default function generate_docs(dirpath, dir, lang) {
     const make_slug = make_session_slug_processor({
         separator: SLUG_SEPARATOR,
         preserve_unicode: SLUG_PRESERVE_UNICODE
     });
 
-    if (!lang) {
-        lang = 'en';
-    }
+    console.log('using language: ' + lang);
 
     return fs
         .readdirSync(`${dirpath}${dir}`)
