@@ -11,7 +11,7 @@ COPY entrypoint.sh /app
 COPY static/ /app/static/
 COPY src/ /app/src/
 COPY cypress/ /app/cypress/
-COPY messages/ /app/messages/
+# COPY messages/ /app/messages/
 
 RUN npm install
 RUN echo dockerlog && ls -la
