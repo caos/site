@@ -1,12 +1,14 @@
 ---
-title: Key cababilities
-description: This document explains zitadels key capabilities and s
+title: Where to start?
+description: This document explains zitadels key capabilities
 ---
 
-### Wo fange ich mit der Firebase-Authentifizierung an?
+<!-- ## Where to start? -->
 
-Wenn Ihre App bereits über eine Anmeldeimplementierung verfügt und Sie diese zur Authentifizierung für Zitadel-Backend-Diensten verwenden möchten, lesen Sie unsere `Migrationsanleitung`.
+### I already have an authentication system
 
-### Ich möchte mein Authentifizierungssystem mit Firebase erstellen 
+If your app already has a sign-in implementation and you want to use it to authenticate with Zitadel backend services, read our `migration documentation`.
 
-Wenn Sie eine neue App erstellen oder einer vorhandenen App eine Anmeldung hinzufügen, verfügt Zitadel über Bibliotheken und Dienste, mit denen Sie die sichere Authentifizierung implementieren können, ohne das Authentifizierungs-Backend selbst erstellen zu müssen. Die Zitadel-Authentifizierung ist eine vollständige Backend-Lösung, die die Anmeldung mit Kennwörtern und weiteren Faktoren zur verbesserten Sicherheit ermöglicht
+### I want to build my authentication system with Zitadel
+
+If you're building a new app or adding sign-in to an existing app, Zitadel has libraries and services that can help you implement secure authentication without having to build the authentication backend yourself. Zitadel Authentication is a complete backend solution for signing in with passwords and additional Factors for enhanced Security.

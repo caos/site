@@ -14,7 +14,6 @@ let currentLocale = null;
 
 register('en', () => import('../messages/en.json'));
 register('de', () => import('../messages/de.json'));
-register('it', () => import('../messages/it.json'));
 
 $locale.subscribe((value) => {
     if (value == null) return;
