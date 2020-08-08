@@ -27,15 +27,21 @@ CONFIG=docs/config.js
 if [ -f "$CONFIG" ]; then
     echo "$CONFIG exist, copy to routes"
     cp -p $CONFIG /app/config.js
-else
-    echo "$CONFIG doesn't exist"
-    exit 1
 fi
 
 DIR=docs/messages
 if [ -d "$DIR" ]; then
     echo "$DIR exist, copy to root"
     cp -pr $DIR /app/
+else
+    echo "$DIR folder doesn't exist"
+    exit 1
+fi
+
+DIR=docs/md
+if [ -d "$DIR" ]; then
+    echo "$DIR exist, copy to root"
+    cp -pr $DIR /app/docs
 else
     echo "$DIR folder doesn't exist"
     exit 1
