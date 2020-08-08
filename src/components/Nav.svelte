@@ -57,6 +57,7 @@
 		transform: translate(0,calc(-100% - 1rem));
         transition: transform 0.2s;
         backdrop-filter: saturate(100%) blur(10px);
+        background-color: rba(var(--back),.3)
 	}
 	header.visible {
 		transform: none;
