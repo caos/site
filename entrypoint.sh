@@ -38,12 +38,12 @@ else
     exit 1
 fi
 
-DIR=docs/md
-if [ -d "$DIR" ]; then
-    echo "$DIR exist, copy to root"
-    cp -pr $DIR /app/docs
+DOCSDIR=docs/md
+if [ -d "$DOCSDIR" ]; then
+    echo "$DOCSDIR exist, copy to root"
+    cp -pr $DOCSDIR /app/docs
 else
-    echo "$DIR folder doesn't exist"
+    echo "$DOCSDIR folder doesn't exist"
     exit 1
 fi
 
@@ -57,12 +57,12 @@ else
     exit 1
 fi
 
-DIR=docs/static
-if [ -d "$DIR" ]; then
-    echo "$DIR exist, copy to root"
-    cp -pr $DIR /app/
+STATICDIR=docs/static
+if [ -d "$STATICDIR" ]; then
+    echo "$STATICDIR exist, copy to root"
+    cp -pr $STATICDIR /app/
 else
-    echo "$DIR folder doesn't exist"
+    echo "$STATICDIR folder doesn't exist"
     exit 1
 fi
 
