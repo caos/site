@@ -31,19 +31,17 @@
 
 /*	theme vars */
 .theme-default {
-	--back: #212224;
+    --back: #1D1133;
+    --back1: #1D1133;
+    --back2: #001F40;
 	--back-light: transparent;
-	--back-api: #2d2e30;
+	--back-api: #1D1133;
 	--prime: #f81f6b;
     --second: orange;
     --flash: #f54381;
 
-    --nav-back: #212224;
-    --side-nav-back: #212224;
-
-    --primary-card: #2d2e30;
-    --secondary-card: #2d2e30;
-    --third-card: #2d2e30;
+    --nav-back: #1D1133;
+    --side-nav-back: #1D1133;
 
 	--heading: #e8eaed;
     --text: #eff8ff;
@@ -124,7 +122,7 @@ a:focus {
 /*	typography ----------------------------- */
 body {
 	font: 300 var(--h4)/var(--lh) var(--font);
-	background-color: var(--back);
+	background-color: var(--back1);
 	color: var(--text);
 	/* default spacing of Overpass is a bit too airy */
 	/* letter-spacing: -.013em; */

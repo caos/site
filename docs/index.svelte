@@ -91,9 +91,13 @@ jobs:
 <Section>
 <img class="logo" src="icons/android-chrome-256x256.png" alt="logo">
     <h2>{$_('title')}</h2>
-    <p>{$_('description')}<a href="/get_started" >{$_('description_link')}</a></p>
+    <p>{$_('description1')}</p>
+    <p>{$_('description2')}</p>
+    <p>{$_('description3')}</p>
+
+    <a href="/get_started" >{$_('button')}</a>
 <Split>
-    <div class="description" slot="what">
+    <div class="description2" slot="what">
         <p>
        {$_('instruction_header_0')}
         </p>
