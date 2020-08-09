@@ -5,13 +5,16 @@
 </script>
 
 <script>
- import { locale } from 'svelte-i18n';
+    import { locale } from 'svelte-i18n';
+    import { startClient } from '../i18n.js';
+
     let group= $locale;
 
     $:setLocale(group);
     function setLocale(language) {
         if (typeof window !== 'undefined') {
             setCookie('locale', language);
+            startClient();
         }
     }
 </script>

@@ -9,7 +9,7 @@ export function get(req, res) {
     if (!json || process.env.NODE_ENV !== 'production') {
         const { slug } = req.params;
         locale.subscribe(localecode => {
-            console.log(localecode);
+            console.log('sublocale: ' + localecode);
             json = JSON.stringify(generate_docs('docs/', slug, localecode)); // TODO it errors if I send the non-stringified value
         });
     }
